@@ -1,6 +1,9 @@
 package com.example.yuwei.jnplants.main;
 
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,17 +15,17 @@ import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
 
 
-
 /**
  * Created by yuwei on 15/4/15.
  */
-public class MainActivity extends ActionBarActivity {
+
+class MainActivity extends ActionBarActivity {
 
     private static MainActivity mainActivity;
     private Toolbar toolbar;
     private DrawerFrameLayout drawer;
 
-    public static MainActivity getMainActivity() {
+    static MainActivity getInstance() {
         return mainActivity;
     }
 
@@ -56,6 +59,7 @@ public class MainActivity extends ActionBarActivity {
         addItemForDrawer(R.string.drawer_item_search, R.drawable.drawer_item_icon_search);
     }
     private void addItemForDrawer(int strId, int imageId){
+        Container.setItemFragmentName(strId);
         drawer.addItem(
                 new DrawerItem()
                         .setTextPrimary(getString(strId))
@@ -63,7 +67,8 @@ public class MainActivity extends ActionBarActivity {
                         .setOnItemClickListener(new DrawerItem.OnItemClickListener() {
                             @Override
                             public void onClick(DrawerItem drawerItem, int id, int position) {
-//                              TODO:
+                                Fragment targetShowingFragment = Container.getTargetFragment(position);
+                                replaceFragment(targetShowingFragment);
                             }
                         })
         );
@@ -87,6 +92,12 @@ public class MainActivity extends ActionBarActivity {
 
         drawer.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
+    }
+
+    void replaceFragment(Fragment targetShowingFragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, targetShowingFragment);
     }
 
 }
