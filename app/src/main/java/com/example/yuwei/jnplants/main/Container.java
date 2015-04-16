@@ -24,6 +24,7 @@ class Container {
     private static HashMap<Integer, FragmentName> fragmentNames = new HashMap<>();
 
 //  由于 fragmentNames 的映射关系是 position -> name 所以 integer 的值从 0 开始
+//  在每次为drawer添加item的时候注册一下item和fragment的对应关系
     static void setItemFragmentName(int strId) {
         switch (strId) {
             case R.string.drawer_item_beautiful_scene:
@@ -35,6 +36,7 @@ class Container {
         amountOfFragment++;
     }
 
+//  通过点击drawer的item所得到的position来判断对应的fragment
     static Fragment getTargetFragment(int drawerItemPosition) {
         FragmentName fragmentName = fragmentNames.get(drawerItemPosition);
         switch (fragmentName) {

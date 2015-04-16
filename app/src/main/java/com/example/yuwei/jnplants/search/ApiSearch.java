@@ -9,8 +9,5 @@ import com.example.yuwei.jnplants.scenes.BeautifulScenesFragment;
  * Created by yuwei on 15/4/15.
  */
 public class ApiSearch implements ApiFragment{
-    @Override
-    public Fragment getFragment(){
-        return BeautifulScenesFragment.getInstace();
-    }
+
 }

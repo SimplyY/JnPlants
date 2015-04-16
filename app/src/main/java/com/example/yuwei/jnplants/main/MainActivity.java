@@ -19,7 +19,7 @@ import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
  * Created by yuwei on 15/4/15.
  */
 
-class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity {
 
     private static MainActivity mainActivity;
     private Toolbar toolbar;
@@ -76,7 +76,7 @@ class MainActivity extends ActionBarActivity {
 
     private void initDrawerArrow(){
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawer,
-                toolbar, R.string.app_name, R.string.app_name
+                toolbar, R.string.NULL, R.string.NULL
         ) {
 
             public void onDrawerClosed(View view) {

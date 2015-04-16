@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">JnPlants</string>
 
+    <string name="NULL"></string>
+
 
     <!--drawer-->
     <string name="drawer_name">植物图鉴</string>

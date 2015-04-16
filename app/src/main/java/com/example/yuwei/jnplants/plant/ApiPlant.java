@@ -13,4 +13,10 @@ public class ApiPlant implements ApiFragment{
     public Fragment getFragment(){
         return PlantFragment.getInstace();
     }
+
+    public Plant getPlant(String plantName){
+
+    }
+
+
 }
