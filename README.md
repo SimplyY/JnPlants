@@ -5,7 +5,7 @@ Plants in JnUniversity android app
 
 ###每个包里面需要有的 
 ----
-fragment 模板：
+fragment 使用单例模式，模板：
 
 ```
 public class PlantFragment extends Fragment{
@@ -19,7 +19,7 @@ public class PlantFragment extends Fragment{
 }
 ```
 
-apixxx 示例：
+apixxx 使用策略模式，示例：
 
 ```
 

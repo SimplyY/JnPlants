@@ -15,7 +15,7 @@ public class ApiScenes implements ApiFragment{
         return BeautifulScenesFragment.getInstace();
     }
 
-    
+
 
     public static ApiScene getApiScene(){
 //      TODO：添加用来初始化ApiScene的参数

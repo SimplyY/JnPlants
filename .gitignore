@@ -6,6 +6,9 @@ gradle/
 /.idea
 .DS_Store
 /build
+# Android Studio
+*.iml
+.idea
 
 # Built application files
 *.apk
