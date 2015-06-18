@@ -12,10 +12,8 @@ import com.example.yuwei.jnplants.plant.ApiPlant;
 public class ApiScenes implements ApiFragment{
     @Override
     public Fragment getFragment(){
-        return BeautifulScenesFragment.getInstace();
+        return BeautifulScenesFragment.getInstance();
     }
-
-
 
     public static ApiScene getApiScene(){
 //      TODO：添加用来初始化ApiScene的参数
@@ -32,7 +30,7 @@ public class ApiScenes implements ApiFragment{
 
         @Override
         public Fragment getFragment() {
-            return SceneFragment.getInstace;
+            return SceneFragment.getInstance();
         }
 
     }
