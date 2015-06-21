@@ -6,7 +6,6 @@ public class SceneFragment extends Fragment{
 
     //  TODO:初始化实例
     static SceneFragment getInstance() {
-
         return instance;
     }
 }
