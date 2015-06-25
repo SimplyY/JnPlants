@@ -1,5 +1,7 @@
 package com.example.yuwei.jnplants.plant;
 
+import android.support.v4.app.Fragment;
+
 import com.example.yuwei.jnplants.interfaces.MyFragment;
 
 /**
@@ -8,12 +10,12 @@ import com.example.yuwei.jnplants.interfaces.MyFragment;
 public class PlantOuter implements MyFragment {
 
     @Override
-    public android.support.v4.app.Fragment getFragment(){
-        return PlantFragment.getInstace();
+    public Fragment getFragment(){
+        return PlantFragment.getInstance();
     }
 
     public Plant getPlant(String plantName){
-
+        return new Plant();
     }
 
 
