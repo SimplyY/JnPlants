@@ -5,6 +5,9 @@ import com.example.yuwei.jnplants.interfaces.MyFragment;
 /**
  * Created by yuwei on 15/4/15.
  */
-public class SearchOuter implements MyFragment {
-
-}
+//public class SearchOuter implements MyFragment {
+//    static SearchOuter getInstance() {
+//
+//        return instance;
+//    }
+//}

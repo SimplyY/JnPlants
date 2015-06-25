@@ -13,7 +13,7 @@ public class MainOuter {
 
 //  所有填充activity的container的fragment都应该实现interface：MyFragment
 //  才能作为replaceContainer的参数来成为showingFragment
-    public static void replaceContainer(MyFragment fragment){
-        getMainActivity().replaceFragment(fragment.getFragment());
+    public static void replaceContainer(MyFragment targetShowingFragment){
+        getMainActivity().replaceFragment(targetShowingFragment.getFragment());
     }
 }
