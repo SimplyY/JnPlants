@@ -21,7 +21,7 @@ class Container {
     }
 
     private static int amountOfFragment = 0;
-    private static HashMap<Integer, FragmentName> fragmentNames = new HashMap<>();
+    private static HashMap<Integer, FragmentName> fragmentNames = new HashMap<Integer, FragmentName>();
 
 //  由于 fragmentNames 的映射关系是 position -> name 所以 integer 的值从 0 开始
 //  在每次为drawer添加item的时候注册一下item和fragment的对应关系

@@ -9,7 +9,7 @@ public class PlantOuter implements MyFragment {
 
     @Override
     public android.support.v4.app.Fragment getFragment(){
-        return PlantFragment.getInstace();
+        return PlantFragment.getInstance();
     }
 
     public Plant getPlant(String plantName){

@@ -8,4 +8,5 @@ public class SceneFragment extends Fragment{
     static SceneFragment getInstance() {
         return instance;
     }
+
 }
