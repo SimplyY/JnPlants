@@ -1,16 +1,14 @@
 package com.example.yuwei.jnplants.plant;
 
-import android.support.v4.app.Fragment;
-
-import com.example.yuwei.jnplants.interfaces.ApiFragment;
+import com.example.yuwei.jnplants.interfaces.MyFragment;
 
 /**
  * Created by yuwei on 15/4/15.
  */
-public class ApiPlant implements ApiFragment{
+public class PlantOuter implements MyFragment {
 
     @Override
-    public Fragment getFragment(){
+    public android.support.v4.app.Fragment getFragment(){
         return PlantFragment.getInstace();
     }
 

@@ -3,8 +3,8 @@ package com.example.yuwei.jnplants.main;
 import android.support.v4.app.Fragment;
 
 import com.example.yuwei.jnplants.R;
-import com.example.yuwei.jnplants.scenes.ApiScenes;
-import com.example.yuwei.jnplants.search.ApiSearch;
+import com.example.yuwei.jnplants.main.scenes.ScenesOuter;
+import com.example.yuwei.jnplants.search.SearchOuter;
 
 import java.util.HashMap;
 
@@ -41,9 +41,9 @@ class Container {
         FragmentName fragmentName = fragmentNames.get(drawerItemPosition);
         switch (fragmentName) {
             case SCENES_FRAGMENT:
-                showingFragment = new ApiScenes().getFragment();
+                showingFragment = new ScenesOuter().getFragment();
             case SEARCH_FRAGMENT:
-                showingFragment = new ApiSearch().getFragment();
+                showingFragment = new SearchOuter().getFragment();
         }
 
         return showingFragment;

@@ -19,11 +19,11 @@ public class PlantFragment extends Fragment{
 }
 ```
 
-apixxx 使用策略模式，示例：
+xxxOuter 使用策略模式，示例：
 
 ```
 
-public class ApiPlant implements ApiFragment{
+public class Plant implements Fragment{
 
     @Override
     public Fragment getFragment(){
@@ -32,15 +32,15 @@ public class ApiPlant implements ApiFragment{
 }
 ```
 
-模块里如何在**apixxx里**提供**切换**activity里的container的功能的示例：
+模块里如何在**xxxOuter里**提供**切换**activity里的container的功能的示例：
 
 ```
 //      TODO：添加初始化Fragment所需参数，以及修改函数体，
         public void ShowSceneFragment(){
-            ApiMain.replaceContainer(new ApiScene());
+            Main.replaceContainer(new Scene());
         }
 //      TODO：完成ShowSceneFragment调用的相应构造函数
-        public ApiScene() {
+        public Scene() {
         }
 ```
 
@@ -49,17 +49,17 @@ public class ApiPlant implements ApiFragment{
 - 内部实现
 
 ```
-public class ApiScenes implements ApiFragment{
-    public static ApiScene getApiScene(){
-    //      TODO：添加用来初始化ApiScene的参数
-        return new ApiScene();
+public class Scenes implements Fragment{
+    public static Scene getScene(){
+    //      TODO：添加用来初始化Scene的参数
+        return new Scene();
     }
-    public static class ApiScene implements ApiFragment{
+    public static class Scene implements Fragment{
     }
 ```
 - 外部调用
 
 ```
-ApiScenes.getApiScene();
-ApiScenes.getApiScene().ShowSceneFragment();
+Scenes.Scene();
+Scenes.Scene().ShowSceneFragment();
 ```
