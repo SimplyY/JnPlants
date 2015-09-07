@@ -6,8 +6,7 @@ gradle/
 # Android Studio
 *.iml
 
-/.idea/workspace.xml
-/.idea/libraries
+
 /.idea
 .idea
 
@@ -38,4 +37,3 @@ proguard/
 
 # Log Files
 *.log
-
