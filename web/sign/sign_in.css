@@ -20,7 +20,7 @@ body {
 label {
     display: inline-block;
     max-width: 100%;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .sr-only {

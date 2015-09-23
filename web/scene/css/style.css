@@ -1,0 +1,49 @@
+body{
+  margin: auto;
+}
+
+article{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer{
+  background-color: #ff7997;
+  height:50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+footer .icons{
+  color: #ffffff;
+  padding: 0.9rem;
+  font-size: 1.5rem;
+  line-height: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+footer .fa{
+  margin: 0 3.1rem;
+}
+
+.love-num,.com-num{
+  font-size: 1.15rem;
+  /*color: #ededed;*/
+  padding: 5px;
+}
+
+@media screen and (min-width:768px) {
+  article{
+    width: 80%;
+  }
+  footer .icons{
+    width: 70%;
+  }
+  footer .fa{
+    margin: 0 11rem;
+  }
+}
