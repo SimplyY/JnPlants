@@ -26,14 +26,14 @@ footer .icons{
   margin: 0 auto;
 }
 
-footer .fa{
-  margin: 0 3.1rem;
+footer .icon{
+    display: inline-block;
+    margin: 0 3rem;
 }
 
 .love-num,.com-num{
-  font-size: 1.15rem;
-  /*color: #ededed;*/
-  padding: 5px;
+  font-size: 1.4rem;
+  font-weight: 200;
 }
 
 @media screen and (min-width:768px) {
@@ -43,7 +43,8 @@ footer .fa{
   footer .icons{
     width: 70%;
   }
-  footer .fa{
-    margin: 0 11rem;
+
+  footer .icon{
+      margin: 0 11rem;
   }
 }
