@@ -37,3 +37,13 @@ proguard/
 
 # Log Files
 *.log
+
+# mongodb
+web/myapp/journal/
+web/myapp/local.*
+web/myapp/local.ns
+web/myapp/mongod.lock
+web/myapp/storage.bson
+web/myapp/JnPlant.0
+web/myapp/JnPlant.ns
+web/myapp/_tmp/
