@@ -27,16 +27,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // db
 mongoose.connect('mongodb://localhost/JnPlant');
 app.models = require('./models/index');
+// used for testing
+app.mongoose = mongoose;
 
 // Load the routes.
-var ROOT_ROUTE = 'JnPlant';
+app.ROOT_API_ROUTE = '/JnPlant/api';
 var routes = require('./routes');
 _.each(routes, function(controller, route) {
-    console.log(controller);
-    app.use(route, controller(app, ROOT_ROUTE, route));
+    app.use(route, controller(app, app.ROOT_API_ROUTE, route));
 });
 
 console.log('Listening on port 8080...');

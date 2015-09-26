@@ -17,6 +17,12 @@
     "method-override": "*",
     "mongoose": "*",
     "node-restful": "*"
-
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "mongodb": "^2.0.43",
+    "pow-mongodb-fixtures": "^0.12.0",
+    "should": "^7.1.0",
+    "supertest": "^1.1.0"
   }
 }
