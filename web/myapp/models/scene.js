@@ -1,4 +1,3 @@
-
 var mongoose = require('mongoose');
 
 // Create the MovieSchema.
@@ -16,5 +15,7 @@ var sceneSchema = new mongoose.Schema({
     },
 
 });
+
+
 // Export the model schema.
 module.exports = sceneSchema;

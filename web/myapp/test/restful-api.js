@@ -3,18 +3,17 @@ var request = require('supertest');
 var config = require('./config/config');
 
 
-describe('restful-api.js', function() {
+describe('in restful-api.js', function() {
     before(function(done) {
         config.ready(function() {
             app = config.app;
             // app.ROOT_API_ROUTE = '/JnPlant/api';
             sceneApi = app.ROOT_API_ROUTE + "/scene";
-            console.log(config.scenes[0]._id.toString());
             done();
         });
     });
 
-    describe('scene-api', function() {
+    describe('test: scene-api', function() {
         // 通过 http 请求的 post 方法增加一个 scene， 其中 url = 域名 + sceneApi
         it('test: add a scene', function(done) {
             request(app)
@@ -24,26 +23,28 @@ describe('restful-api.js', function() {
         });
         // get 方法得到 scene list
         it('test: get scene list', function(done) {
-            config.scenes[0]._id = config.scenes[0]._id.toString();
             request(app)
                 .get(sceneApi)
                 .expect(config.scenes)
                 .expect(200, done);
         });
-        // put 方法 : update a scene
+        // get 方法 查询， 通过qurey语句，注意返回的是一个数组
+        it('test: get scene by qurey', function (done) {
+            request(app)
+                .get(sceneApi + '?title__equals=' + config.scenes[0].title)
+                .expect([config.scenes[0]])
+                .expect(200, done);
+        });
+        // put 方法 : update a scene by id
         it('test: update a scene', function(done) {
-            config.scenes[0].title = 'title hasUpdate';
             request(app)
                 .put(sceneApi + '/' + config.scenes[0]._id)
                 .send({
                     title: 'title has updated'
                 })
                 .expect(200, done);
-            // request(app)
-            //     .get(sceneApi)
-            //     .expect(config.scenes)
-            //     .expect(200, done);
         });
+        // delete 方法 : delete a scene by id
         it('test: delete a scene', function (done) {
             request(app)
                 .del(sceneApi + '/' + config.scenes[0]._id)
