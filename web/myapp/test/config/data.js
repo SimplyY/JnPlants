@@ -5,5 +5,10 @@ exports.scenes = [{
     __v: 0,
     title: "test1",
     article: "test1",
-    comment: ["a", "b"],
+    author: "余伟",
+    month: "9",
+    img: "https://www.google.com.sg/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    hasChecked: false,
+    lovers: ["a", "b"],
+    comments: ["a", "b"],
 }];

@@ -7,7 +7,6 @@ describe('in restful-api.js', function() {
     before(function(done) {
         config.ready(function() {
             app = config.app;
-            // app.ROOT_API_ROUTE = '/JnPlant/api';
             sceneApi = app.ROOT_API_ROUTE + "/scene";
             done();
         });
