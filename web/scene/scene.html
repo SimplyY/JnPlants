@@ -6,30 +6,49 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title></title>
     <link href="css/github-markdown.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/scene.css" rel="stylesheet">
+    <link href="css/comment.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <article id='article-md-preview' class="markdown-body"></article>
-    <footer>
-        <div class="icons">
-            <div class="icon">
-                <i class="fa fa-heart-o love"></i>
-                <span class="love-num">10</span>
-            </div>
-            <div class="icon">
-                <i class="fa fa-commenting"></i>
-                <span class="com-num">5</span>
-            </div>
+<div class="pages">
 
+    <section id="scene-page" class="view">
+        <div class="wrapper">
+            <div class="scoller">
+                <article id='article-md-preview' class="markdown-body"></article>
+            </div>
         </div>
-    </footer>
+        <footer>
+            <div class="icons">
+                <div class="icon">
+                    <i class="fa fa-heart-o love"></i>
+                    <span class="love-num">10</span>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-commenting comment"></i>
+                    <span class="com-num">5</span>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+    <section id="comment-page" class="view">
+        <p>
+            lallall
+        </p>
+    </section>
+</div>
+
 </body>
-<script src="js/markdown.js" charset="utf-8"></script>
-<script src="js/preview-markdown.js" charset="utf-8"></script>
-<script src="lib/zepto.js" charset="utf-8"></script>
-<script src="lib/gmu.js" charset="utf-8"></script>
-<script src="js/scene.js" charset="utf-8"></script>
+<script src="js/markdown.js"></script>
+<script src="js/preview-markdown.js"></script>
+<script src="js/iscroll-lite.js"></script>
+<script src="lib/zepto.js"></script>
+<script src="lib/gmu.js"></script>
+<script src="js/scene.js"></script>
 
 </html>
