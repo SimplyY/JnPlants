@@ -1,0 +1,93 @@
+html,
+body {
+  color: #333;
+  width: 100%;
+  height: 100%; }
+
+p {
+  font-size: 16px;
+  font-weight: 400; }
+
+.head {
+  background-color: #ff7997;
+  color: #fff;
+  height: 250px;
+  width: 100%;
+  text-align: center; }
+  .head .head-content {
+    padding: 4rem 0; }
+    .head .head-content h1 {
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 1rem; }
+    .head .head-content p {
+      padding: 2px 0;
+      font-weight: 500; }
+
+.content {
+  width: 95%;
+  margin: 4.5rem auto 0;
+  padding: 0 1rem; }
+  .content .part {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1.5rem; }
+    .content .part p {
+      margin: 1rem 0;
+      line-height: 25px; }
+    .content .part h2 {
+      color: #c9c8c8;
+      padding-bottom: 0.3rem;
+      border-bottom: 0.2rem solid #999; }
+  .content .scene-list,
+  .content .preview {
+    width: 26%; }
+  .content .contribute {
+    width: 36%; }
+  .content .divide {
+    margin: 8rem 0 1.5rem 0;
+    padding: 5px;
+    border: none;
+    border-top: 0.5rem double #ff7997;
+    text-align: center; }
+    .content .divide:after {
+      content: url("../divide-img.png");
+      background-color: #fff;
+      position: relative;
+      top: -1.75rem;
+      padding: 0 .05rem;
+      display: inline-block; }
+  .content .write {
+    margin: 1rem 0; }
+    .content .write input {
+      border: none;
+      border-bottom: 1px solid #666;
+      width: 75%;
+      height: 25px;
+      outline: none;
+      font-size: 1.1rem; }
+  .content .scene-article {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-top: 2.5rem; }
+    .content .scene-article input {
+      width: 90%;
+      height: 35px;
+      padding: 2.5px;
+      font-size: 1.5rem;
+      border: 1px dashed rgba(255, 121, 151, 0.5);
+      margin: 0 auto;
+      display: block;
+      text-align: center; }
+    .content .scene-article .article {
+      padding: .8rem; }
+      .content .scene-article .article textarea {
+        margin: 2rem 0;
+        padding: 1rem 0;
+        border: none;
+        outline: none;
+        border-top: 1px dashed rgba(255, 121, 151, 0.5);
+        font-size: 1.2rem;
+        line-height: 25px; }
+
+/*# sourceMappingURL=contribute.css.map */
