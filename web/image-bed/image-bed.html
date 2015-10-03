@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>image-bed</title>
+    <link rel="stylesheet" href="image-bed.css" media="screen" title="no title" charset="utf-8">
+</head>
+<header>
+</header>
+
+<body>
+    <textarea id="text-input" class="input" oninput="this.editor.update()" name="name" rows="30" cols="70"></textarea>
+    <div id="preview" class="preview"> </div>
+
+    <div id="load-image">
+        <input type="file" id="files" name="name" multiple='true'>
+        <output id="list"></output>
+        <input type="submit" value="Submit" />
+
+    </div>
+    {# <script src="lodash.min.js" charset="utf-8"></script>#}
+    <script src="image-min-upload-bed.js" charset="utf-8"></script>
+    <script src="markdown.js"></script>
+    <script>
+    (function(window, document, undefined) {
+        function Editor(input, preview) {
+            this.update = function() {
+                preview.innerHTML = markdown.toHTML(input.value);
+            };
+            input.editor = this;
+            this.update();
+        }
+        var $ = function(id) {
+            return document.getElementById(id);
+        };
+        new Editor($("text-input"), $("preview"));
+    })(window, document);
+    </script>
+</body>
+
+</html>
