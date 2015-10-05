@@ -10,34 +10,39 @@
 </header>
 
 <body>
-    <textarea id="text-input" class="input" oninput="this.editor.update()" name="name" rows="30" cols="70"></textarea>
+    <textarea id="text-input" class="input" oninput="this.editor.update();" name="name" rows="30" cols="70"></textarea>
     <div id="preview" class="preview"> </div>
 
     <div id="load-image">
-        <input type="button" value="上传图片" id="pickfiles"/>
+        <input type="button" value="上传图片" id="pickfiles" />
 
     </div>
+    <!-- cdn lib -->
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/plupload/2.1.5/plupload.full.min.js"></script>
     <script src="https://dn-cdnjscn.qbox.me/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://dn-cdnjscn.qbox.me/ajax/libs/markdown.js/0.5.0/markdown.min.js"></script>
-    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/plupload/2.1.5/moxie.min.js"></script>
+
+    <!--local  lib -->
     <script src="lib/qiniu.min.js" charset="utf-8"></script>
+    <script src="lib/my-util.js" charset="utf-8"></script>
 
+    <!-- my js -->
     <script src="image-bed.js" charset="utf-8"></script>
-
     <script>
-    (function(window, document, undefined) {
-        function Editor(input, preview) {
-            this.update = function() {
-                preview.innerHTML = markdown.toHTML(input.value);
+        (function(window, document, undefined) {
+            function Editor(input, preview) {
+                this.update = function() {
+                    preview.innerHTML = markdown.toHTML(input.value);
+                };
+                input.editor = this;
+                this.update();
+            }
+            var $ = function(id) {
+                return document.getElementById(id);
             };
-            input.editor = this;
-            this.update();
-        }
-        var $ = function(id) {
-            return document.getElementById(id);
-        };
-        new Editor($("text-input"), $("preview"));
-    })(window, document);
+            new Editor($("text-input"), $("preview"));
+        })(window, document);
     </script>
 </body>
 
