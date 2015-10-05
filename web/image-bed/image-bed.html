@@ -14,14 +14,16 @@
     <div id="preview" class="preview"> </div>
 
     <div id="load-image">
-        <input type="file" id="files" name="name" multiple='true'>
-        <output id="list"></output>
-        <input type="submit" value="Submit" />
+        <input type="button" value="上传图片" id="pickfiles"/>
 
     </div>
-    {# <script src="lodash.min.js" charset="utf-8"></script>#}
-    <script src="image-min-upload-bed.js" charset="utf-8"></script>
-    <script src="markdown.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/markdown.js/0.5.0/markdown.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/plupload/2.1.5/moxie.min.js"></script>
+    <script src="lib/qiniu.min.js" charset="utf-8"></script>
+
+    <script src="image-bed.js" charset="utf-8"></script>
+
     <script>
     (function(window, document, undefined) {
         function Editor(input, preview) {
