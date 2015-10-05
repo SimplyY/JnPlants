@@ -10,45 +10,51 @@
     <link href="css/scene.css" rel="stylesheet">
     <link href="css/comment.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
 
-<body>
-<div class="pages">
+<body onload="loaded()">
+    <div class="pages">
 
-    <section id="scene-page" class="view">
-        <div class="wrapper">
-            <div class="scoller">
-                <article id='article-md-preview' class="markdown-body"></article>
+        <section id="scene-page" class="view">
+            <div class="wrapper">
+                    <article id='article-md-preview' class="markdown-body"></article>
             </div>
-        </div>
-        <footer>
-            <div class="icons">
-                <div class="icon">
-                    <i class="fa fa-heart-o love"></i>
-                    <span class="love-num">10</span>
+            <footer>
+                <div class="icons">
+                    <div class="icon">
+                        <i class="fa fa-heart-o love"></i>
+                        <span class="love-num">10</span>
+                    </div>
+                    <div class="icon">
+
+                        <i class="fa fa-commenting comment"></i>
+                        <span class="com-num">5</span>
+                    </div>
                 </div>
-                <div class="icon">
-                    <i class="fa fa-commenting comment"></i>
-                    <span class="com-num">5</span>
+            </footer>
+
+        </section>
+
+        <section id="comment-page" class="view">
+            <div class="wrapper">
+                <div class="scroller">
+                    <p>
+                        lallall
+                    </p>
                 </div>
             </div>
-        </footer>
-
-    </section>
-
-    <section id="comment-page" class="view">
-        <p>
-            lallall
-        </p>
-    </section>
-</div>
+        </section>
+    </div>
 
 </body>
 <script src="js/markdown.js"></script>
 <script src="js/preview-markdown.js"></script>
+<!-- <script src="js/bf-history.js"></script> -->
 <script src="js/iscroll-lite.js"></script>
+<script src="js/myscroll.js"></script>
 <script src="lib/zepto.js"></script>
 <script src="lib/gmu.js"></script>
 <script src="js/scene.js"></script>
-
+<script src="js/zepto.history.js"></script>
 </html>
