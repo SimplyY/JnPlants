@@ -9,7 +9,7 @@
 // 3. upload max_file_size: '2mb'
 
 // 从服务器端，获取七牛云的uptoken
-$.get("http://121.40.224.83:19110/get-qiniu-uptoken", function(data) {
+$.get("http://121.40.224.83:8090/get-qiniu-uptoken", function(data) {
     var My_Uptoken = data.uptoken;
 
     $(function() {
