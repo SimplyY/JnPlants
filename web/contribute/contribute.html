@@ -6,6 +6,7 @@
     <title>contribute</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="sass/contribute.css">
+    <link rel="stylesheet" href="css/github-markdown.css">
 </head>
 
 <body>
@@ -18,23 +19,21 @@
     </div>
     <div class="container">
         <div class="content">
-            <div class="part scene-list">
+            <div class="part">
                 <h2>美景列表</h2>
                 <p>
-                    美景列表将列出投稿已通过和未通过的美景，
-                    您可以点击列表项查看别人已通过的美景介绍。
-                    或者在您的投稿未通过时对美景进行修改。
+                    美景列表将列出投稿已通过和未通过的美景， 您可以点击列表项查看别人已通过的美景介绍。 或者在您的投稿未通过时对美景进行修改。
                 </p>
             </div>
-            <div class="part contribute">
+            <div class="part">
                 <h2>投稿</h2>
                 <p>
                     将您喜欢的美景记录下来吧!
-                    <br/> 在这里编辑，将您喜欢的美景投稿给我们，<br/>
-                    四季变换，时光流转，您心底的美丽依然在这里。
+                    <br/> 在这里编辑，将您喜欢的美景投稿给我们，
+                    <br/> 四季变换，时光流转，您心底的美丽依然在这里。
                 </p>
             </div>
-            <div class="part preview">
+            <div class="part">
                 <h2>预览</h2>
                 <p>
                     编辑的同时可以在这里看到呈现出来的最终效果。
@@ -43,33 +42,56 @@
         </div>
         <div class="content">
             <hr class="divide"></hr>
-            <div class="part scene-list list">
-                <p>lllll</P>
+            <div class="part scene-list">
+                <p>已通过</p>
+                <div class="admited-list">
+                    <h3>春薄日暖花相惜</h3>
+                    <p>by:XXX</p>
+                    <p>2015-10-2</p>
+                    <h1>春</h1>
+                </div>
+                <p>未通过</p>
+                <div class="unadmited-list">
+                    <h3>春薄日暖花相惜</h3>
+                    <p>by:XXX</p>
+                    <p>2015-10-2</p>
+                    <h1>春</h1>
+                </div>
             </div>
-            <form class="part contribute contribute-content" action="" method="post">
-                <div class="write">
-                    <label for="">作者：</label>
-                    <input type="text" name="author" value="">
-                </div>
-                <div class="write">
-                    <label for="">季节：</label>
-                    <input type="text" name="season" value="">
-                </div>
-                <div class="write">
-                    <label for="">日期：</label>
-                    <input type="text" name="date" value="">
-                </div>
-                <div class="write scene-article">
+            <form class="part contribute-content" action="" method="post">
+
+                    <div class="write scene-author">
+                        <label for="">作者：</label>
+                        <input type="text" name="author" value="">
+                    </div>
+                    <div class="write">
+                        <label for="">季节：</label>
+                        <input type="text" name="season" value="" placeholder="春">
+                        <span>季</span>
+                    </div>
+                    <div class="write">
+                        <label for="">月份：</label>
+                        <input type="text" name="date" value="" placeholder="3">
+                        <span>月</span>
+                    </div>
+
+
+                <div class="scene-article">
                     <div class="article">
-                        <input type="text" name="title" value="" placeholder="请输入美景标题">
-                        <textarea name="scene" rows="10" cols="51"></textarea>
-                        <button type="button" name="button"></button>
+                        <input type="text" name="title" id="title" value="" oninput="inputTitle()" placeholder="请输入美景标题">
+                        <textarea name="scene" rows="20" cols="55" id="text-input" oninput="this.editor.update()" placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
                     </div>
                 </div>
+                <button type="button" name="button">投稿</button>
             </form>
+            <div class="preview">
+                <div class="markdown-body" id="preview-title"></div>
+                <div class="markdown-body" id="preview-content"></div>
+            </div>
+
         </div>
     </div>
     </div>
-</body>
-
-</html>
+    <script src="js/markdown.js" charset="utf-8"></script>
+    <script src="js/md-preview.js" charset="utf-8"></script>
+</body </html>
