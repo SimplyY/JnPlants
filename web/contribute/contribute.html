@@ -6,7 +6,7 @@
     <title>contribute</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="sass/contribute.css">
-    <link rel="stylesheet" href="css/github-markdown.css">
+    <link rel="stylesheet" href="lib/github-markdown.css">
 </head>
 
 <body>
@@ -42,47 +42,56 @@
         </div>
         <div class="content">
             <hr class="divide"></hr>
-            <div class="part scene-list">
+            <div class="part scene-list" id="list">
                 <p>已通过</p>
-                <div class="admited-list">
-                    <h3>春薄日暖花相惜</h3>
-                    <p>by:XXX</p>
-                    <p>2015-10-2</p>
-                    <h1>春</h1>
+                <div class="admited-list" v-on="click: clickList">
+                    <h3 v-text="list_title"></h3>
+                    <span class="by">by:</span>
+                    <p v-text="author"></p>
+                    <p v-text="month"  class="yue"></p>
+                    <span>月</span>
+                    <h1 v-text="season"></h1>
                 </div>
                 <p>未通过</p>
                 <div class="unadmited-list">
-                    <h3>春薄日暖花相惜</h3>
-                    <p>by:XXX</p>
-                    <p>2015-10-2</p>
-                    <h1>春</h1>
+                    <h3 v-text="list_title"></h3>
+                    <span class="by">by:</span>
+                    <p v-text="author"></p>
+                    <p v-text="month"  class="yue"></p>
+                    <span>月</span>
+                    <h1 v-text="season"></h1>
                 </div>
             </div>
-            <form class="part contribute-content" action="" method="post">
-
-                    <div class="write scene-author">
-                        <label for="">作者：</label>
-                        <input type="text" name="author" value="">
-                    </div>
-                    <div class="write">
-                        <label for="">季节：</label>
-                        <input type="text" name="season" value="" placeholder="春">
-                        <span>季</span>
-                    </div>
-                    <div class="write">
-                        <label for="">月份：</label>
-                        <input type="text" name="date" value="" placeholder="3">
-                        <span>月</span>
-                    </div>
-
+            <form class="part contribute-content" action="" method="post" id="article">
+                <div class="write">
+                    <label for="">作者：</label>
+                    <input type="text" name="author" v-model="author">
+                </div>
+                <div class="write">
+                    <label for="">地点：</label>
+                    <input type="text" name="location" v-model="location">
+                </div>
+                <div class="write">
+                    <label for="">季节：</label>
+                    <input type="text" name="season" placeholder="春" v-model="season">
+                    <span>季</span>
+                </div>
+                <div class="write">
+                    <label for="">月份：</label>
+                    <input type="text" name="date" placeholder="3" v-model="month">
+                    <span>月</span>
+                </div>
 
                 <div class="scene-article">
-                    <div class="article">
-                        <input type="text" name="title" id="title" value="" oninput="inputTitle()" placeholder="请输入美景标题">
-                        <textarea name="scene" rows="20" cols="55" id="text-input" oninput="this.editor.update()" placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
+                    <div class="article" id="check">
+                        <input type="text" name="title" id="title" oninput="inputTitle()"
+                        placeholder="请输入美景标题" v-model="title">
+                        <textarea name="scene" rows="20" cols="55" id="text-input"
+                        oninput="this.editor.update()" v-model="article_content"
+                        placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
                     </div>
                 </div>
-                <button type="button" name="button">投稿</button>
+                <button type="button" name="button" v-on="click: contribute">投稿</button>
             </form>
             <div class="preview">
                 <div class="markdown-body" id="preview-title"></div>
@@ -92,6 +101,8 @@
         </div>
     </div>
     </div>
-    <script src="js/markdown.js" charset="utf-8"></script>
-    <script src="js/md-preview.js" charset="utf-8"></script>
+    <script src="lib/markdown.js"></script>
+    <script src="lib/vue.min.js"></script>
+    <script src="js/md-preview.js"></script>
+    <script src="js/contribute.js"></script>
 </body </html>

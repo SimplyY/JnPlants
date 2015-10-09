@@ -6,7 +6,7 @@ function Editor(input, preview) {
 }
 
 function inputTitle() {
-    var title = $("title").value;
+    var title = "##" + $("title").value;
     $('preview-title').innerHTML = markdown.toHTML(title);
 }
 
