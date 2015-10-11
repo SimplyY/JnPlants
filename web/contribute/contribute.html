@@ -5,14 +5,22 @@
     <meta charset="utf-8">
     <title>contribute</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="sass/contribute.css">
+    <link rel="stylesheet" href="css/contribute.css">
     <link rel="stylesheet" href="lib/github-markdown.css">
 </head>
 
 <body>
+    <div class="mask popup">
+        <div class="popup-content">
+            <p>*^_^* 投稿成功</p>
+        </div>
+    </div>
     <nav>
-        <img src="http://7xkpdt.com1.z0.glb.clouddn.com/15-10-10/69208466.jpg" alt="QQ" />
-        <p>QQ登录</p>
+        <div class="qq">
+            <img src="http://7xkpdt.com1.z0.glb.clouddn.com/15-10-10/69208466.jpg" alt="QQ" />
+            <p>QQ登录</p>
+        </div>
+
     </nav>
     <div class="head">
         <div class="head-content">
@@ -45,23 +53,23 @@
             </div>
         </div>
         <div class="content">
-            <hr class="divide"></hr>
+            <hr class="divide">
             <div class="part scene-list" id="list">
-                <p>已通过</p>
-                <div class="admited-list" v-on="click: clickList">
+                <p class="approve">已通过</p>
+                <div class="admitted-list" v-on="click: clickList">
                     <h3 v-text="list_title"></h3>
                     <span class="by">by:</span>
                     <p v-text="author"></p>
-                    <p v-text="month"  class="yue"></p>
+                    <p v-text="month" class="yue"></p>
                     <span>月</span>
                     <h1 v-text="season"></h1>
                 </div>
-                <p>未通过</p>
-                <div class="unadmited-list">
+                <p class="disapprove">未通过</p>
+                <div class="unadmitted-list">
                     <h3 v-text="list_title"></h3>
                     <span class="by">by:</span>
                     <p v-text="author"></p>
-                    <p v-text="month"  class="yue"></p>
+                    <p v-text="month" class="yue"></p>
                     <span>月</span>
                     <h1 v-text="season"></h1>
                 </div>
@@ -88,14 +96,11 @@
 
                 <div class="scene-article">
                     <div class="article" id="check">
-                        <input type="text" name="title" id="title" oninput="inputTitle()"
-                        placeholder="请输入美景标题" v-model="title">
-                        <textarea name="scene" rows="20" cols="55" id="text-input"
-                        oninput="this.editor.update()" v-model="article_content"
-                        placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
+                        <input type="text" name="title" id="title" oninput="inputTitle()" placeholder="请输入美景标题" v-model="title">
+                        <textarea name="scene" rows="20" cols="55" id="text-input" oninput="this.editor.update()" v-model="article_content" placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
                     </div>
                 </div>
-                <button type="button" name="button" v-on="click: contribute">投稿</button>
+                <button type="button" name="button" v-on="click: contribute" id="btn">投稿</button>
             </form>
             <div class="preview">
                 <div class="markdown-body" id="preview-title"></div>
@@ -105,8 +110,12 @@
         </div>
     </div>
     </div>
-    <script src="lib/markdown.js"></script>
-    <script src="lib/vue.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/vue/0.9.3/vue.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/markdown.js/0.5.0/markdown.min.js"></script>
     <script src="js/md-preview.js"></script>
     <script src="js/contribute.js"></script>
-</body </html>
+    <script src="js/click-scroll.js"></script>
+</body>
+
+</html>

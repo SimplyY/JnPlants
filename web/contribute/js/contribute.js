@@ -27,7 +27,7 @@ var scene = new Vue({
                         scene.month = article.month;
                         scene.season = article.season;
                         scene.location = article.location;
-                        scene.article_content = article.article_content
+                        scene.article_content = article.article_content;
                     }
                 }
             })
