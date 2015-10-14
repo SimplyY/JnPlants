@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>test</title>
-        <style media="screen">
-            p{
-                font-size: 5rem;
+
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li v-repeat="item in items" v-on="click: toggle(item)">
+            {{item.text}}
+        </li>
+    </ul>
+    <!-- <script src="https://dn-cdnjscn.qbox.me/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js"></script>
+    <!-- <script src="js/contribute.js"></script> -->
+    <script type="text/javascript">
+        new Vue({
+            el: '#list',
+            data: {
+                items: [{
+                    text: 'one',
+                    done: true
+                }, {
+                    text: 'two',
+                    done: false
+                }]
+            },
+            methods: {
+                toggle: function(item) {
+                    item.done = !item.done
+                    alert(item.done);
+                }
             }
-        </style>
-    </head>
-    <body>
-        <p id="list">
-            llllll
-        </p>
-        <p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p>
-        <p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p><p>
-            llllll
-        </p>
-        <button type="button" name="button" id="btn">投稿</button>
-<script src="https://dn-cdnjscn.qbox.me/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-         <script src="js/click-scroll.js"></script>
-    </body>
+        })
+    </script>
+</body>
+
 </html>

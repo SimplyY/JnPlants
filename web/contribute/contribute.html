@@ -55,64 +55,71 @@
         <div class="content">
             <hr class="divide">
             <div class="part scene-list" id="list">
-                <p class="approve">已通过</p>
-                <div class="admitted-list" v-on="click: clickList">
-                    <h3 v-text="list_title"></h3>
+                <p class="approve">未通过</p>
+                <div class="admitted-list" v-on="click: changeEditedScene(item)" v-repeat="item in items">
+                    <h3>{{item.title}}</h3>
                     <span class="by">by:</span>
-                    <p v-text="author"></p>
-                    <p v-text="month" class="yue"></p>
+                    <p>{{item.author}}</p>
+                    <p class="yue">{{item.month}}</p>
                     <span>月</span>
-                    <h1 v-text="season"></h1>
+                    <p class="season">{{item.season}}</p>
                 </div>
-                <p class="disapprove">未通过</p>
-                <div class="unadmitted-list">
-                    <h3 v-text="list_title"></h3>
+
+                <p class="disapprove">已通过</p>
+                <div class="unadmitted-list" v-repeat="item in items" v-on="click: clickList(item)">
+                    <h3>{{item.title}}</h3>
                     <span class="by">by:</span>
-                    <p v-text="author"></p>
-                    <p v-text="month" class="yue"></p>
+                    <p>{{item.author}}</p>
+                    <p class="yue">{{item.month}}</p>
                     <span>月</span>
-                    <h1 v-text="season"></h1>
+                    <p class="season">{{item.season}}</p>
                 </div>
             </div>
             <form class="part contribute-content" action="" method="post" id="article">
                 <div class="write">
-                    <label for="">作者：</label>
-                    <input type="text" name="author" v-model="author">
-                </div>
-                <div class="write">
                     <label for="">地点：</label>
-                    <input type="text" name="location" v-model="location">
-                </div>
-                <div class="write">
-                    <label for="">季节：</label>
-                    <input type="text" name="season" placeholder="春" v-model="season">
-                    <span>季</span>
-                </div>
-                <div class="write">
-                    <label for="">月份：</label>
-                    <input type="text" name="date" placeholder="3" v-model="month">
-                    <span>月</span>
+                    <input type="text" name="location" v-model="location" id="location" oninput="this.inputLocation.update()">
                 </div>
 
+                <div class="write">
+                    <label for="">月份：</label>
+                    <input type="text" name="month" placeholder="3" v-model="month" id="month" oninput="this.inputMonth.update()">
+                    <span>月</span>
+                </div>
+                <input type="button" name="name" value="上传图片">
                 <div class="scene-article">
                     <div class="article" id="check">
-                        <input type="text" name="title" id="title" oninput="inputTitle()" placeholder="请输入美景标题" v-model="title">
-                        <textarea name="scene" rows="20" cols="55" id="text-input" oninput="this.editor.update()" v-model="article_content" placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
+                        <input type="text" name="title" id="title" oninput="this.inputTitle.update()" placeholder="请输入美景标题" v-model="title">
+                        <textarea name="scene" rows="20" id="article-input" oninput="this.editor.update()" v-model="article" placeholder="这里采用markdown的编辑模式，换行请打2个回车"></textarea>
                     </div>
                 </div>
                 <button type="button" name="button" v-on="click: contribute" id="btn">投稿</button>
             </form>
-            <div class="preview">
-                <div class="markdown-body" id="preview-title"></div>
-                <div class="markdown-body" id="preview-content"></div>
+            <div class="part preview">
+                <p class="warn">预览</p>
+                <div class="preview-border">
+                    <div class="markdown-body">
+                        <span id="preview-location"></span>
+                        <span id="preview-month"></span>
+                    </div>
+                    <div class="markdown-body" id="preview-title"></div>
+
+                    <div class="markdown-body" id="preview-article"></div>
+                </div>
+
+
             </div>
 
         </div>
     </div>
     </div>
-    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/vue/0.9.3/vue.min.js"></script>
+    <!-- lib -->
+    <script src="https://cdn.bootcss.com/vue/0.12.16/vue.min.js"></script>
     <script src="https://dn-cdnjscn.qbox.me/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://dn-cdnjscn.qbox.me/ajax/libs/markdown.js/0.5.0/markdown.min.js"></script>
+    <!-- util -->
+    <script src="js/util/mdUtil.js" charset="utf-8"></script>
+    <!-- myjs -->
     <script src="js/md-preview.js"></script>
     <script src="js/contribute.js"></script>
     <script src="js/click-scroll.js"></script>
