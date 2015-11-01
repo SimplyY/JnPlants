@@ -5,61 +5,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title></title>
+    <!-- <link href="lib/gmu.css" rel="stylesheet"> -->
     <link href="css/github-markdown.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <link href="css/scene.css" rel="stylesheet">
     <link href="css/comment.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 </head>
 
-<body onload="loaded()">
-    <div class="pages">
-
-        <section id="scene-page" class="view">
-            <div class="s-scroller">
-                <article id='article-md-preview' class="markdown-body"></article>
-            </div>
-            <footer>
-                <div class="icons">
-                    <div class="icon">
-                        <i class="fa fa-heart-o love"></i>
-                        <span class="love-num">10</span>
-                    </div>
-                    <div class="icon">
-
-                        <i class="fa fa-commenting comment"></i>
-                        <span class="com-num">5</span>
-                    </div>
+<body>
+    <section id="scene-page">
+        <div class="markdown-body">
+            <div>
+                <img class="top-img">
+                <div class="scene-info">
+                    <div class="title"></div>
+                    <div class="author"></div>
+                    <div class="month"></div>
+                    <div class="location"></div>
+                    <!-- <div class="season"></div> -->
+                    <article id='article-md-preview'></article>
                 </div>
-            </footer>
-
-        </section>
-
-        <section id="comment-page" class="view">
-            <div class="c-scroller">
-                <div>
-                    <p>lallall</p>
-                    <p>lallall</p>
-                    <p>lallall</p>
-                    <p>lallall</p>
-                    <p>lallall</p>
-                    <p>lallall</p>
-                </div>
-
             </div>
-        </section>
-    </div>
+        </div>
+
+        <footer>
+            <div class="icons">
+                <div class="icon1">
+                    <i class="fa fa-heart-o love"></i>
+                    <span class="love-num">10</span>
+                </div>
+                <div class="icon2">
+                    <i class="fa fa-commenting comment"></i>
+                    <span class="com-num">5</span>
+                </div>
+            </div>
+        </footer>
+
+    </section>
 
 </body>
+
+<!-- lib -->
 <script src="lib/markdown.js"></script>
-<script src="lib/iscroll-lite.js"></script>
 <script src="lib/zepto.js"></script>
-<script src="lib/zepto.history.js"></script>
 <script src="lib/gmu.js"></script>
-<script src="js/preview-markdown.js"></script>
-<!-- <script src="js/bf-history.js"></script> -->
-<script src="js/myscroll.js"></script>
+<!-- my_js -->
 <script src="js/scene.js"></script>
+<script src="js/getSceneData.js"></script>
 
 </html>
