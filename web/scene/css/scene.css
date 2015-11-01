@@ -1,0 +1,35 @@
+.scene-info {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title {
+    text-align: center;
+}
+footer {
+    background-color: #4aca63;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 2.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer .icons {
+    padding: 0.3rem 0.5rem 0 0.5rem ;
+    position: relative;
+}
+.icon1, .icon2 {
+    position: absolute;
+}
+.icon1 {
+    left: 3rem;
+}
+.icon2 {
+    right: 3.5rem;
+}
+.love-num, .com-num {
+    font-size: 1.4rem;
+    font-weight: 200;
+}
