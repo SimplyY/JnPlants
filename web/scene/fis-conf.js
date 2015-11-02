@@ -16,9 +16,9 @@ fis.match('::package', {
 
 
 fis.match('*.css', {
-  packTo: '/public/aio.css'
+  packTo: '/scene/css/aio.css'
 });
 
 fis.match('*.js', {
-  packTo: '/public/aio.js'
+  packTo: '/scene/js/aio.js'
 });
