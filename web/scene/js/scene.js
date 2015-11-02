@@ -18,8 +18,11 @@
         }
     });
 
-    $('#back').swipeRight(function() {
+    var mc = new Hammer.Manager(document.getElementById('scene-content'));
+    mc.add(new Hammer.Swipe({ velocity: 0.05, threshold: 0 }));
+
+    mc.on('swiperight', function(ev) {
+        console.log(ev);
         window.back.back();
     });
-
 })();
