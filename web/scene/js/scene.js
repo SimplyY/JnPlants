@@ -5,13 +5,12 @@
 
     $('.love').tap(function() {
         if (isClicked === false) {
-            $(this).removeClass('fa-heart-o').addClass('fa-heart').css('color', '#fdacc9');
-
+            $(this).removeClass('icon-heart-o').addClass('icon-heart').css('color', '#fdacc9');
             love_num = love_num + 1;
             $('.love-num').text(love_num);
             isClicked = true;
         } else if (isClicked === true) {
-            $(this).removeClass('fa-heart').addClass('fa-heart-o').css('color', '#ffffff');
+            $(this).removeClass('icon-heart').addClass('icon-heart-o').css('color', '#ffffff');
 
             love_num = love_num - 1;
             $('.love-num').text(love_num);
