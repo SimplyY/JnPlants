@@ -18,7 +18,7 @@
         }
     });
 
-    $('#back').swipe(function() {
+    $('#back').swipeRight(function() {
         window.back.back();
     });
 
