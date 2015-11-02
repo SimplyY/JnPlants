@@ -18,4 +18,8 @@
         }
     });
 
+    $('#back').swipe(function() {
+        window.back.back();
+    });
+
 })();
