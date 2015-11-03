@@ -17,9 +17,4 @@
             isClicked = false;
         }
     });
-
-    $('#back').swipeRight(function() {
-        window.back.back();
-    });
-
 })();

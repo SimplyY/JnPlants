@@ -15,8 +15,7 @@
         $(".author").html(markdown.toHTML("- 投稿作者：" + data.authorName));
         $(".location").html(markdown.toHTML("- 美景地点：" + data.location));
         $(".month").html(markdown.toHTML("- 美景时间：" + data.month.toString() + "月"));
-        // $(".season").html(markdown.toHTML("- 季节："+ data.season));
-        $("#article-md-preview").html(markdown.toHTML(data.article));
+        $("#article").html(markdown.toHTML(data.article));
     }
 
     function getQureyParams(url) {

@@ -20,6 +20,9 @@ footer .icons {
     padding: 0.3rem 0.5rem 0 0.5rem ;
     position: relative;
 }
+#article{
+    margin-bottom: 2.5rem;
+}
 .icon1, .icon2 {
     position: absolute;
 }
