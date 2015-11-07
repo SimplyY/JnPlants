@@ -10,7 +10,7 @@ module.exports = {
         //加载器配置
         loaders: [
             { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.(ttf|svg|woff)(\?[a-z0-9]+)?$/, loader : 'file-loader'}
+            { test: /\.(ttf|svg|woff|png)/, loader : 'url-loader'}
         ]
     },
 };
