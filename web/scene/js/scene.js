@@ -18,7 +18,7 @@
         }
     });
 
-    var mc = new Hammer.Manager(document.getElementById('scene-content'));
+    var mc = new Hammer.Manager(document.getElementById('scene-page'));
     mc.add(new Hammer.Swipe({ velocity: 0.05, threshold: 0 ,direction:Hammer.DIRECTION_HORIZONTAL}));
 
     mc.on('swiperight', function(ev) {

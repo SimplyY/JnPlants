@@ -1,5 +1,15 @@
 require('../lib/gmu.js');
 
+exports.back = function back() {
+    var mc = new Hammer.Manager(document.getElementById('scene-page'));
+    mc.add(new Hammer.Swipe({ velocity: 0.05, threshold: 0 ,direction:Hammer.DIRECTION_HORIZONTAL}));
+
+    mc.on('swiperight', function(ev) {
+        console.log(ev);
+        window.back.back();
+    });
+};
+
 exports.paddingSceneInfo = function paddingSceneInfo(scene) {
     $('.top-img').attr('src', scene.imgUrl);
     $('.title').html(markdown.toHTML('##' + scene.title));

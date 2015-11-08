@@ -33,6 +33,8 @@ function countHandle(argument) {
 }
 
 function setController() {
+    controller.back();
+
     controller.paddingSceneInfo(sceneModel.data);
     controller.setClickLoveEvent(sceneModel.data, userModel.data, setLoveInServer);
 }
