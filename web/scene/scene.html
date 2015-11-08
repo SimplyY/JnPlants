@@ -12,36 +12,32 @@
     <link href="css/iconfont.css" rel="stylesheet"> -->
 </head>
 
-<body id="back">
-    <section id="scene-page">
-        <div class="markdown-body">
-            <div>
-                <img class="top-img">
-                <div class="scene-info">
-                    <div class="title"></div>
-                    <div class="author"></div>
-                    <div class="month"></div>
-                    <div class="location"></div>
-                    <article id="article"></article>
-                </div>
+<body>
+    <section id="scene-page" class="markdown-body">
+        <div>
+            <img class="top-img">
+            <div class="scene-info">
+                <div class="title"></div>
+                <div class="author"></div>
+                <div class="month"></div>
+                <div class="location"></div>
+                <article id="article"></article>
             </div>
         </div>
 
-        <footer>
-            <div class="icons">
-                <div class="icon1">
-                    <span class="icon-heart-o love"></span>
-                    <span class="love-num">10</span>
-                </div>
-                <div class="icon2">
-                    <i class="icon-bubble comment"></i>
-                    <span class="com-num">5</span>
-                </div>
-            </div>
-        </footer>
-
     </section>
-
+    <footer>
+        <div class="icons">
+            <div class="icon1">
+                <span class="icon-heart-o love"></span>
+                <span id="love-num" class="love-num"></span>
+            </div>
+            <div class="icon2">
+                <i class="icon-bubble comment"></i>
+                <span id="com-num" class="com-num"></span>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <!-- lib -->
@@ -50,7 +46,7 @@
 
 <!-- <script src="lib/gmu.js"></script> -->
 <!-- my_js -->
-<script src="js/bundle.js"></script>
+<script src="bundle.js"></script>
 <!-- <script src="js/scene.js"></script>
 <script src="js/getSceneData.js"></script> -->
 

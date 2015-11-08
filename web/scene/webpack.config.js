@@ -4,7 +4,7 @@ module.exports = {
     //入口文件输出配置
     output: {
        path: __dirname,
-       filename: "js/bundle.js"
+       filename: "bundle.js"
    },
     module: {
         //加载器配置
