@@ -5,53 +5,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title></title>
-    <link href="css/github-markdown.css" rel="stylesheet">
+    <!-- <link href="css/github-markdown.css" rel="stylesheet">
     <link href="css/global.css" rel="stylesheet">
     <link href="css/scene.css" rel="stylesheet">
     <link href="css/comment.css" rel="stylesheet">
-    <link href="css/iconfont.css" rel="stylesheet">
-    <!-- <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet"> -->
+    <link href="css/iconfont.css" rel="stylesheet"> -->
 </head>
 
-<body id="back">
-    <section id="scene-page">
-        <div id="scene-content" class="markdown-body">
-            <div>
-                <img class="top-img">
-                <div class="scene-info">
-                    <div class="title"></div>
-                    <div class="author"></div>
-                    <div class="month"></div>
-                    <div class="location"></div>
-                    <article id='article-md-preview'></article>
-                </div>
+<body>
+    <section id="scene-page" class="markdown-body">
+        <div>
+            <img class="top-img">
+            <div class="scene-info">
+                <div class="title"></div>
+                <div class="author"></div>
+                <div class="month"></div>
+                <div class="location"></div>
+                <article id="article"></article>
             </div>
         </div>
 
-        <footer>
-            <div class="icons">
-                <div class="icon1">
-                    <span class="icon-heart-o love"></span>
-                    <span class="love-num">10</span>
-                </div>
-                <div class="icon2">
-                    <i class="icon-bubble comment"></i>
-                    <span class="com-num">5</span>
-                </div>
-            </div>
-        </footer>
-
     </section>
-
+    <footer>
+        <div class="icons">
+            <div class="icon1">
+                <span class="icon-heart-o love"></span>
+                <span id="love-num" class="love-num"></span>
+            </div>
+            <div class="icon2">
+                <i class="icon-bubble comment"></i>
+                <span id="com-num" class="com-num"></span>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <!-- lib -->
 <script src="http://cdn.bootcss.com/markdown.js/0.5.0/markdown.min.js"></script>
 <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
-<script src="https://dn-cdnjscn.qbox.me/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
-<script src="lib/gmu.js"></script>
+
+<!-- <script src="lib/gmu.js"></script> -->
 <!-- my_js -->
-<script src="js/scene.js"></script>
-<script src="js/getSceneData.js"></script>
+<script src="bundle.js"></script>
+<!-- <script src="js/scene.js"></script>
+<script src="js/getSceneData.js"></script> -->
 
 </html>
