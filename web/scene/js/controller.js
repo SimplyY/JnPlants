@@ -25,12 +25,21 @@ exports.paddingSceneInfo = function paddingSceneInfo(scene) {
 exports.setClickLoveEvent = function setClickLoveEvent(scene, user, setLoveInServer) {
     //  init state
     var isClicked = false;
+
+
+
     if ($.inArray(scene._id, user.loveScenesIds) > -1) {
         isClicked = true;
         setLoveIcon($('.love'), isClicked);
     }
 
     $('.love').tap(function() {
+        //  对未登录时，点击收藏的提示
+        if (window.android && !user) {
+            window.android.webToast('请先登录');
+            return;
+        }
+
         var $love = $(this);
         setLoveState($love);
     });
