@@ -6,7 +6,7 @@ exports.back = function back() {
 
     mc.on('swiperight', function(ev) {
         console.log(ev);
-        window.back.back();
+        window.android.back();
     });
 };
 
