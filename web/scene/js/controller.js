@@ -26,9 +26,7 @@ exports.setClickLoveEvent = function setClickLoveEvent(scene, user, setLoveInSer
     //  init state
     var isClicked = false;
 
-
-
-    if ($.inArray(scene._id, user.loveScenesIds) > -1) {
+    if (user && $.inArray(scene._id, user.loveScenesIds) > -1) {
         isClicked = true;
         setLoveIcon($('.love'), isClicked);
     }
