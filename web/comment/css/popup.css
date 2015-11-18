@@ -1,0 +1,30 @@
+.mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background: #6cf2b6;
+    border: 1px solid #6cf2b6;
+    border-radius: 2px;
+}
+
+.popup-content {
+    margin: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    z-index: 10;
+    border-radius: 1px;
+    line-height: 40px;
+    text-align: center;
+}
