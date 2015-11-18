@@ -3,9 +3,8 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acro
     padding: 0;
     border: 0;
     outline: 0;
-    /*width: 100%;
-    height: 100%;*/
-    font-family: Lato,sans-serif;
+    font-family: 'Helvetica Neue', Helvetica,
+,Lato,sans-serif;
     vertical-align: baselinebaseline;
 }
 ol, ul {
@@ -25,10 +24,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-p {
-    font-size: 16px;
-    font-weight: 400;
-}
+
 
 input[type=number] {
     -moz-appearance:textfield;

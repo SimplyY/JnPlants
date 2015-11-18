@@ -47,10 +47,10 @@
 	// css
 	__webpack_require__(1);
 	__webpack_require__(5);
-	__webpack_require__(8);
+	__webpack_require__(7);
 
 	// js
-	__webpack_require__(7);
+	__webpack_require__(9);
 
 
 /***/ },
@@ -88,7 +88,7 @@
 
 
 	// module
-	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    outline: 0;\r\n    /*width: 100%;\r\n    height: 100%;*/\r\n    font-family: Lato,sans-serif;\r\n    vertical-align: baselinebaseline;\r\n}\r\nol, ul {\r\n    list-style: none;\r\n}\r\na {\r\n    text-decoration: none;\r\n}\r\nbutton{\r\n    border: 0;\r\n    outline: 0;\r\n}\r\nblockquote, q {\r\n    quotes: none;\r\n}\r\ntable {\r\n    border-collapse: collapse;\r\n    border-spacing: 0;\r\n}\r\np {\r\n    font-size: 16px;\r\n    font-weight: 400;\r\n}\r\n\r\ninput[type=number] {\r\n    -moz-appearance:textfield;\r\n}\r\ninput[type=number]::-webkit-inner-spin-button,\r\ninput[type=number]::-webkit-outer-spin-button {\r\n    -webkit-appearance: none;\r\n    margin: 0;\r\n}\r\n", ""]);
+	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    outline: 0;\r\n    font-family: 'Helvetica Neue', Helvetica,\r\n,Lato,sans-serif;\r\n    vertical-align: baselinebaseline;\r\n}\r\nol, ul {\r\n    list-style: none;\r\n}\r\na {\r\n    text-decoration: none;\r\n}\r\nbutton{\r\n    border: 0;\r\n    outline: 0;\r\n}\r\nblockquote, q {\r\n    quotes: none;\r\n}\r\ntable {\r\n    border-collapse: collapse;\r\n    border-spacing: 0;\r\n}\r\n\r\n\r\ninput[type=number] {\r\n    -moz-appearance:textfield;\r\n}\r\ninput[type=number]::-webkit-inner-spin-button,\r\ninput[type=number]::-webkit-outer-spin-button {\r\n    -webkit-appearance: none;\r\n    margin: 0;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -438,19 +438,59 @@
 
 
 	// module
-	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.container{\r\n    width: 97%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n#comment-content{\r\n    position: relative;\r\n    border-bottom: 1px solid #4ace63;\r\n}\r\n\r\n.avatar{\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n}\r\n\r\n.commentator{\r\n    position: absolute;\r\n    top: .2rem;\r\n    left: 10%;\r\n}\r\n\r\n.comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .4rem;\r\n    right: 0;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 10%;\r\n    margin-bottom: .5rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1.05rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: 1.05rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
+	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.container{\r\n    width: 97%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.avatar{\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n}\r\n\r\n.commentator{\r\n    position: absolute;\r\n    top: .2rem;\r\n    left: 10%;\r\n}\r\n\r\n.comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .4rem;\r\n    right: 0;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 10%;\r\n    margin-bottom: .5rem;\r\n    font-size: 1.2rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1.05rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: 1.05rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(8);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./popup.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./popup.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".mask {\r\n    display: none;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    margin: auto;\r\n    width: 200px;\r\n    height: 200px;\r\n    background: #6cf2b6;\r\n    border: 1px solid #6cf2b6;\r\n    border-radius: 2px;\r\n}\r\n\r\n.popup-content {\r\n    margin: auto;\r\n    position: relative;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 200px;\r\n    height: 200px;\r\n    background: #fff;\r\n    z-index: 10;\r\n    border-radius: 1px;\r\n    line-height: 40px;\r\n    text-align: center;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	function getComment(){
 	        return {
 	            avatar: '',
-	            commentator: 'changqi',
+	            commentator: '人asdf',
 	            commentTime: '2015-11-8',
 	            commentWords: 'ddd'
 	        };
@@ -472,7 +512,7 @@
 	        items: [
 	            {
 	                avatar: '',
-	                commentator: 'changqi',
+	                commentator: '人asdf',
 	                commentTime: '2015-11-8',
 	                commentWords: '尝试 Vue.js 最简单的方法是使用 JSFiddle Hello World 例子。在浏览器新标签页中打开它，跟着我们查看一些基础示例。如果你喜欢用包管理器下载/安装，查看安装教程。'
 	            }
@@ -489,46 +529,6 @@
 	        }
 	    },
 	});
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(9);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./popup.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./popup.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".mask {\r\n    display: none;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    margin: auto;\r\n    width: 200px;\r\n    height: 200px;\r\n    background: #6cf2b6;\r\n    border: 1px solid #6cf2b6;\r\n    border-radius: 2px;\r\n}\r\n\r\n.popup-content {\r\n    margin: auto;\r\n    position: relative;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 200px;\r\n    height: 200px;\r\n    background: #fff;\r\n    z-index: 10;\r\n    border-radius: 1px;\r\n    line-height: 40px;\r\n    text-align: center;\r\n}\r\n", ""]);
-
-	// exports
 
 
 /***/ }

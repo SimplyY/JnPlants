@@ -1,7 +1,7 @@
 function getComment(){
         return {
             avatar: '',
-            commentator: 'changqi',
+            commentator: '人asdf',
             commentTime: '2015-11-8',
             commentWords: 'ddd'
         };
@@ -23,7 +23,7 @@ var CommentList = new Vue({
         items: [
             {
                 avatar: '',
-                commentator: 'changqi',
+                commentator: '人asdf',
                 commentTime: '2015-11-8',
                 commentWords: '尝试 Vue.js 最简单的方法是使用 JSFiddle Hello World 例子。在浏览器新标签页中打开它，跟着我们查看一些基础示例。如果你喜欢用包管理器下载/安装，查看安装教程。'
             }

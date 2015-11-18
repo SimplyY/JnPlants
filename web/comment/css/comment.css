@@ -7,11 +7,6 @@ body{
     margin: .5rem auto;
 }
 
-#comment-content{
-    position: relative;
-    border-bottom: 1px solid #4ace63;
-}
-
 .avatar{
     width: 30px;
     height: 30px;
@@ -35,6 +30,7 @@ body{
 .comment-words{
     margin-left: 10%;
     margin-bottom: .5rem;
+    font-size: 1.2rem;
 }
 
 footer{
