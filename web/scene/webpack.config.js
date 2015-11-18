@@ -3,7 +3,7 @@ module.exports = {
     entry: './js/entry.js',
     //入口文件输出配置
     output: {
-       path: '/Users/yuwei/GitHub/JnPlants-node/public/scene',
+       path: __dirname,
        filename: 'bundle.js'
    },
     module: {
