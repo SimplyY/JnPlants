@@ -1,6 +1,5 @@
 // load css
 require('../css/scene.css');
-require('../css/comment.css');
 require('../css/github-markdown.css');
 require('../css/global.css');
 require('../css/iconfont.css');
@@ -8,7 +7,6 @@ require('../css/iconfont.css');
 // load js
 var controller = require('./controller');
 var models = require('./models.js');
-var config = require('./config');
 
 var sceneModel = models.sceneModel;
 var userModel = models.userModel;
