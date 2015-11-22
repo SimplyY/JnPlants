@@ -54,3 +54,5 @@ web/myapp/_tmp/
 web/JnPlants-node/
 .sass-cache/
 *.css.map
+
+*.map
