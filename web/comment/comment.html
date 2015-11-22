@@ -5,33 +5,28 @@
     <meta charset="utf-8">
     <title>comment</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <!-- <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/comment.css"> -->
 </head>
 
 <body>
-    <div class="mask popup">
-        <div class="popup-content">
-            <p></p>
-        </div>
-    </div>
-    <div class="container">
+    <div class="main-container">
         <div id="comment-list"  v-for="item in items" v-on:click= "reponseClick(item)">
             <div class="commentator-info">
                 <img class="avatar" src="img/beauty.png" alt="" />
-                <span class="commentator">{{item.commentator}}</span>
-                <span class="comment-time">{{item.commentTime}}</span>
+                <span class="user">{{item.user}}</span>
+                <span class="comment-date">{{item.createdDate}}</span>
+                <span class="comment-time">{{item.createdTime}}</span>
             </div>
-            <p class="comment-words">{{item.commentWords}}</p>
+            <p class="comment-words">{{item.content}}</p>
         </div>
     </div>
+
     <footer>
         <div id="comment-area">
-            <input class="input-comment" type="text" name="name" value="" placeholder="评论一下...">
+            <input class="input-comment" v-model="content" type="text" name="name" value="" placeholder="评论一下...">
             <button class="send-comment-btn" v-on:click= "send" type="button" name="button">发送</button>
         </div>
-
     </footer>
+
     <script type="text/javascript">
     (function(doc, window) {
         var resizeCall = function(){
@@ -52,6 +47,7 @@
     </script>
     <!-- lib -->
     <script src="https://cdn.bootcss.com/vue/1.0.4/vue.min.js"></script>
+    <script src="https://dn-cdnjscn.qbox.me/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
     <!-- myJs -->
     <script src="bundle.js"></script>
 </body>

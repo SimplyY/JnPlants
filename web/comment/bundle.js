@@ -1,69 +1,78 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!*********************!*\
+  !*** ./js/entry.js ***!
+  \*********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// css
-	__webpack_require__(1);
-	__webpack_require__(5);
-	__webpack_require__(7);
-
+	__webpack_require__(/*! ../css/reset.css */ 1);
+	__webpack_require__(/*! ../css/comment.css */ 5);
+	
 	// js
-	__webpack_require__(9);
+	var vueComment = __webpack_require__(/*! ./vue-comment.js */ 7);
+	var server = __webpack_require__(/*! ./server.js */ 8);
+	
+	// 获取commentlist
+	server.getList(vueComment.CommentList);
 
 
 /***/ },
 /* 1 */
+/*!***********************!*\
+  !*** ./css/reset.css ***!
+  \***********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-
+	
 	// load the styles
-	var content = __webpack_require__(2);
+	var content = __webpack_require__(/*! !./../~/css-loader!./reset.css */ 2);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 4)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -81,20 +90,26 @@
 
 /***/ },
 /* 2 */
+/*!**************************************!*\
+  !*** ./~/css-loader!./css/reset.css ***!
+  \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 3)();
 	// imports
-
-
+	
+	
 	// module
 	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    outline: 0;\r\n    font-family: 'Helvetica Neue', Helvetica,\r\n,Lato,sans-serif;\r\n    vertical-align: baselinebaseline;\r\n}\r\nol, ul {\r\n    list-style: none;\r\n}\r\na {\r\n    text-decoration: none;\r\n}\r\nbutton{\r\n    border: 0;\r\n    outline: 0;\r\n}\r\nblockquote, q {\r\n    quotes: none;\r\n}\r\ntable {\r\n    border-collapse: collapse;\r\n    border-spacing: 0;\r\n}\r\n\r\n\r\ninput[type=number] {\r\n    -moz-appearance:textfield;\r\n}\r\ninput[type=number]::-webkit-inner-spin-button,\r\ninput[type=number]::-webkit-outer-spin-button {\r\n    -webkit-appearance: none;\r\n    margin: 0;\r\n}\r\n", ""]);
-
+	
 	// exports
 
 
 /***/ },
 /* 3 */
+/*!**************************************!*\
+  !*** ./~/css-loader/lib/css-base.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	/*
@@ -104,7 +119,7 @@
 	// css base code, injected by the css-loader
 	module.exports = function() {
 		var list = [];
-
+	
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
@@ -118,7 +133,7 @@
 			}
 			return result.join("");
 		};
-
+	
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -151,6 +166,9 @@
 
 /***/ },
 /* 4 */
+/*!*************************************!*\
+  !*** ./~/style-loader/addStyles.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -174,23 +192,23 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [];
-
+	
 	module.exports = function(list, options) {
-		if(false) {
+		if(true) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
-
+	
 		options = options || {};
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
+	
 		// By default, add <style> tags to the bottom of <head>.
 		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
+	
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
-
+	
 		return function update(newList) {
 			var mayRemove = [];
 			for(var i = 0; i < styles.length; i++) {
@@ -213,7 +231,7 @@
 			}
 		};
 	}
-
+	
 	function addStylesToDom(styles, options) {
 		for(var i = 0; i < styles.length; i++) {
 			var item = styles[i];
@@ -235,7 +253,7 @@
 			}
 		}
 	}
-
+	
 	function listToStyles(list) {
 		var styles = [];
 		var newStyles = {};
@@ -253,7 +271,7 @@
 		}
 		return styles;
 	}
-
+	
 	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
 		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
@@ -272,7 +290,7 @@
 			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 		}
 	}
-
+	
 	function removeStyleElement(styleElement) {
 		styleElement.parentNode.removeChild(styleElement);
 		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
@@ -280,24 +298,24 @@
 			styleElementsInsertedAtTop.splice(idx, 1);
 		}
 	}
-
+	
 	function createStyleElement(options) {
 		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
 		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
-
+	
 	function createLinkElement(options) {
 		var linkElement = document.createElement("link");
 		linkElement.rel = "stylesheet";
 		insertStyleElement(options, linkElement);
 		return linkElement;
 	}
-
+	
 	function addStyle(obj, options) {
 		var styleElement, update, remove;
-
+	
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
 			styleElement = singletonElement || (singletonElement = createStyleElement(options));
@@ -323,9 +341,9 @@
 				removeStyleElement(styleElement);
 			};
 		}
-
+	
 		update(obj);
-
+	
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
@@ -336,19 +354,19 @@
 			}
 		};
 	}
-
+	
 	var replaceText = (function () {
 		var textStore = [];
-
+	
 		return function (index, replacement) {
 			textStore[index] = replacement;
 			return textStore.filter(Boolean).join('\n');
 		};
 	})();
-
+	
 	function applyToSingletonTag(styleElement, index, remove, obj) {
 		var css = remove ? "" : obj.css;
-
+	
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
@@ -362,16 +380,16 @@
 			}
 		}
 	}
-
+	
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
 		var sourceMap = obj.sourceMap;
-
+	
 		if(media) {
 			styleElement.setAttribute("media", media)
 		}
-
+	
 		if(styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = css;
 		} else {
@@ -381,23 +399,23 @@
 			styleElement.appendChild(document.createTextNode(css));
 		}
 	}
-
+	
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
 		var sourceMap = obj.sourceMap;
-
+	
 		if(sourceMap) {
 			// http://stackoverflow.com/a/26603875
 			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 		}
-
+	
 		var blob = new Blob([css], { type: "text/css" });
-
+	
 		var oldSrc = linkElement.href;
-
+	
 		linkElement.href = URL.createObjectURL(blob);
-
+	
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
@@ -405,15 +423,18 @@
 
 /***/ },
 /* 5 */
+/*!*************************!*\
+  !*** ./css/comment.css ***!
+  \*************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-
+	
 	// load the styles
-	var content = __webpack_require__(6);
+	var content = __webpack_require__(/*! !./../~/css-loader!./comment.css */ 6);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 4)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -431,105 +452,167 @@
 
 /***/ },
 /* 6 */
+/*!****************************************!*\
+  !*** ./~/css-loader!./css/comment.css ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 3)();
 	// imports
-
-
+	
+	
 	// module
-	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.container{\r\n    width: 97%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.avatar{\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n}\r\n\r\n.commentator{\r\n    position: absolute;\r\n    top: .2rem;\r\n    left: 10%;\r\n}\r\n\r\n.comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .4rem;\r\n    right: 0;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 10%;\r\n    margin-bottom: .5rem;\r\n    font-size: 1.2rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1.05rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: 1.05rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
-
+	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.main-container{\r\n    width: 98%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n#comment-list{\r\n    margin-top: .4rem;\r\n    border-bottom: 1px solid #4ace63;\r\n}\r\n\r\n.commentator-info{\r\n    position: relative;\r\n}\r\n\r\n.avatar{\r\n    width: 11%;\r\n    height: 11%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.commentator{\r\n    position: absolute;\r\n    font-size: .9rem;\r\n    top: 20%;\r\n    left: 12%;\r\n}\r\n\r\n.comment-date, .comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .3rem;\r\n}\r\n\r\n.comment-date{\r\n    right: 3rem;\r\n}\r\n\r\n.comment-time{\r\n    right: .3rem;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 11%;\r\n    margin-bottom: .5rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: .9rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
+	
 	// exports
 
 
 /***/ },
 /* 7 */
+/*!***************************!*\
+  !*** ./js/vue-comment.js ***!
+  \***************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(8);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./popup.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./popup.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
+	var server = __webpack_require__(/*! ./server.js */ 8);
+	
+	var SendComment = new Vue({
+	    el: "#comment-area",
+	    data: getEmptyComment(),
+	    methods:{
+	        send: function() {
+	            var comment = {};
+	            CommentList.copyComment(SendComment, comment);
+	            CommentList.addComment(comment);
+	            SendComment.$data = getEmptyComment();
+	        }
+	    }
+	});
+	
+	var CommentList = new Vue({
+	    el: "#comment-list",
+	    data: {
+	        items: []
+	    },
+	    methods:{
+	        reponseClick: function(item) {
+	            console.log("ll");
+	        },
+	        addComment: function(comment) {
+	            server.addComment(comment);
+	            CommentList.items.push(comment);
+	            console.log(CommentList.items);
+	        },
+	        copyComment: function(srcComment, decComment) {
+	            var commentSchema = getEmptyComment();
+	            for(var attr in commentSchema){
+	                if(commentSchema.hasOwnProperty(attr)){
+	                    decComment[attr] = srcComment[attr];
+	                }
+	            }
+	        }
+	    },
+	});
+	
+	
+	function getEmptyComment(){
+	    return {
+	        userId: '',
+	        createdDate: '',
+	        createdTime: '',
+	        content: '',
+	        _id: ''
+	    };
 	}
+	
+	module.exports = {
+	    CommentList:　CommentList
+	};
+
 
 /***/ },
 /* 8 */
+/*!**********************!*\
+  !*** ./js/server.js ***!
+  \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".mask {\r\n    display: none;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    margin: auto;\r\n    width: 200px;\r\n    height: 200px;\r\n    background: #6cf2b6;\r\n    border: 1px solid #6cf2b6;\r\n    border-radius: 2px;\r\n}\r\n\r\n.popup-content {\r\n    margin: auto;\r\n    position: relative;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 200px;\r\n    height: 200px;\r\n    background: #fff;\r\n    z-index: 10;\r\n    border-radius: 1px;\r\n    line-height: 40px;\r\n    text-align: center;\r\n}\r\n", ""]);
-
-	// exports
+	var config = __webpack_require__(/*! ./config.js */ 9);
+	
+	module.exports = {
+	    'getList': getList,
+	    'addComment': addComment
+	};
+	
+	function getList(commentList) {
+	    var sceneUrl = config.sceneApiUrl + config.sceneId;
+	
+	    //  查询scene表
+	    $.get(sceneUrl, function (data) {
+	        var commentsIds = data.commentsIds;
+	
+	        var idInQureyString = '?_id__in=';
+	        var commentUrl = config.commentApiUrl + idInQureyString + commentsIds.toString();
+	        // 查询comment表
+	        $.get(commentUrl, function (data) {
+	            commentList.items = data;
+	        });
+	    });
+	}
+	
+	// 增加一条评论
+	function addComment(newComment) {
+	    $.post(config.commentApiUrl, newComment, function (comment) {
+	        // 将服务器端post 成功产生的_id记录
+	        newComment._id = comment._id;
+	    });
+	}
 
 
 /***/ },
 /* 9 */
+/*!**********************!*\
+  !*** ./js/config.js ***!
+  \**********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var util = __webpack_require__(/*! ./util */ 10);
+	
+	var URLParams = util.getQureyParams(window.location.href);
+	module.exports = {
+	    commentApiUrl: 'http://121.40.224.83:8080/JnPlant/api/comment/',
+	    sceneApiUrl: 'http://121.40.224.83:8080/JnPlant/api/scene/',
+	
+	    sceneId: URLParams.sceneId,
+	    openId: URLParams.openId
+	};
+
+
+/***/ },
+/* 10 */
+/*!********************!*\
+  !*** ./js/util.js ***!
+  \********************/
 /***/ function(module, exports) {
 
-	function getComment(){
-	        return {
-	            avatar: '',
-	            commentator: '人asdf',
-	            commentTime: '2015-11-8',
-	            commentWords: 'ddd'
-	        };
+	exports.getQureyParams = function(url) {
+	    var searchParams = {};
+	
+	    var qurey = url.split('?');
+	    // scene_id=1&user_id=2
+	    qurey = qurey[qurey.length -1];
+	
+	    var params = qurey.split('&');
+	    for (var i = 0; i < params.length; i++) {
+	        // scene_id=1
+	        var keyValue = params[i].split('=');
+	        searchParams[keyValue[0]] = keyValue[1];
 	    }
-
-	var SendComment = new Vue({
-	    el: "#comment-area",
-	    data: getComment(),
-	    methods:{
-	        send: function() {
-	            CommentList.addComment();
-	        }
-	    }
-	});
-
-	var CommentList = new Vue({
-	    el: "#comment-list",
-	    data: {
-	        items: [
-	            {
-	                avatar: '',
-	                commentator: '人asdf',
-	                commentTime: '2015-11-8',
-	                commentWords: '尝试 Vue.js 最简单的方法是使用 JSFiddle Hello World 例子。在浏览器新标签页中打开它，跟着我们查看一些基础示例。如果你喜欢用包管理器下载/安装，查看安装教程。'
-	            }
-	        ]
-	    },
-	    methods:{
-	        reponseClick: function(item) {
-	            console.log("lll");
-	        },
-	        addComment: function() {
-	            // var test = SendComment.$data;
-	            console.log(SendComment);
-	            CommentList.items.push(SendComment);
-	        }
-	    },
-	});
+	
+	    return searchParams;
+	};
 
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

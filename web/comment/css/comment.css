@@ -2,35 +2,51 @@ body{
     font-size: 1rem;
 }
 
-.container{
-    width: 97%;
+.main-container{
+    width: 98%;
     margin: .5rem auto;
 }
 
+#comment-list{
+    margin-top: .4rem;
+    border-bottom: 1px solid #4ace63;
+}
+
+.commentator-info{
+    position: relative;
+}
+
 .avatar{
-    width: 30px;
-    height: 30px;
+    width: 11%;
+    height: 11%;
     border-radius: 50%;
 }
 
 .commentator{
     position: absolute;
-    top: .2rem;
-    left: 10%;
+    font-size: .9rem;
+    top: 20%;
+    left: 12%;
 }
 
-.comment-time{
+.comment-date, .comment-time{
     font-size: .9rem;
     color: #a5a5a5;
     position: absolute;
-    top: .4rem;
-    right: 0;
+    top: .3rem;
+}
+
+.comment-date{
+    right: 3rem;
+}
+
+.comment-time{
+    right: .3rem;
 }
 
 .comment-words{
-    margin-left: 10%;
+    margin-left: 11%;
     margin-bottom: .5rem;
-    font-size: 1.2rem;
 }
 
 footer{
@@ -48,7 +64,7 @@ footer{
 }
 
 .input-comment{
-    font-size: 1.05rem;
+    font-size: 1rem;
     width: 75%;
     height: 1.5rem;
     margin: 0 2% 0 3%;
@@ -64,7 +80,7 @@ footer{
     width: 15%;
     height: 1.8rem;
     line-height: 1.5rem;
-    font-size: 1.05rem;
+    font-size: .9rem;
     font-weight: 500;
     border-radius: 3px;
 }
