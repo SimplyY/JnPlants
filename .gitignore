@@ -52,3 +52,5 @@ web/myapp/JnPlant.ns
 web/myapp/_tmp/
 
 web/JnPlants-node/
+
+*.map
