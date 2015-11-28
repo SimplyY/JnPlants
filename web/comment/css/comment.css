@@ -22,11 +22,11 @@ body{
     border-radius: 50%;
 }
 
-.commentator{
+.user-name{
     position: absolute;
     font-size: .9rem;
-    top: 20%;
-    left: 12%;
+    top: 22%;
+    left: 12.5%;
 }
 
 .comment-date, .comment-time{
@@ -45,7 +45,7 @@ body{
 }
 
 .comment-words{
-    margin-left: 11%;
+    margin-left: 12.5%;
     margin-bottom: .5rem;
 }
 

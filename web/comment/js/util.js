@@ -14,3 +14,37 @@ exports.getQureyParams = function(url) {
 
     return searchParams;
 };
+
+exports.restfulPutRequest = function (apiUrl, id, changeInfo, callback) {
+    $.ajax({
+        url: apiUrl + id,
+        type: 'PUT',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(changeInfo),
+        success: function() {
+            callback();
+            console.log('put success');
+        }
+    });
+};
+
+exports.getDateString = function (date) {
+    var dateString = '';
+    var year = date.getFullYear().toString();
+    var month = (date.getMonth() + 1).toString();
+    var dateInMonth = date.getDate().toString();
+
+    dateString = year + '-' + month + '-' + dateInMonth;
+    return dateString;
+};
+
+exports.getTimeString = function (date) {
+    var timeString = '';
+    var hour = date.getHours().toString();
+    var minutes = date.getMinutes().toString();
+    var seconds = date.getSeconds().toString();
+
+    timeString = hour + ':' + minutes + ':' + seconds;
+    return timeString;
+};

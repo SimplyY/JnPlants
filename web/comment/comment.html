@@ -9,10 +9,10 @@
 
 <body>
     <div class="main-container">
-        <div id="comment-list"  v-for="item in items" v-on:click= "reponseClick(item)">
+        <div id="comment-list"  v-for="item in items">
             <div class="commentator-info">
-                <img class="avatar" src="img/beauty.png" alt="" />
-                <span class="user">{{item.user}}</span>
+                <img class="avatar" v-bind:src="item.avatar" alt="" />
+                <span class="user-name">{{item.userName}}</span>
                 <span class="comment-date">{{item.createdDate}}</span>
                 <span class="comment-time">{{item.createdTime}}</span>
             </div>

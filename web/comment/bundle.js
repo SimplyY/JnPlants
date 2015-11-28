@@ -462,7 +462,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.main-container{\r\n    width: 98%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n#comment-list{\r\n    margin-top: .4rem;\r\n    border-bottom: 1px solid #4ace63;\r\n}\r\n\r\n.commentator-info{\r\n    position: relative;\r\n}\r\n\r\n.avatar{\r\n    width: 11%;\r\n    height: 11%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.commentator{\r\n    position: absolute;\r\n    font-size: .9rem;\r\n    top: 20%;\r\n    left: 12%;\r\n}\r\n\r\n.comment-date, .comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .3rem;\r\n}\r\n\r\n.comment-date{\r\n    right: 3rem;\r\n}\r\n\r\n.comment-time{\r\n    right: .3rem;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 11%;\r\n    margin-bottom: .5rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: .9rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
+	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.main-container{\r\n    width: 98%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n#comment-list{\r\n    margin-top: .4rem;\r\n    border-bottom: 1px solid #4ace63;\r\n}\r\n\r\n.commentator-info{\r\n    position: relative;\r\n}\r\n\r\n.avatar{\r\n    width: 11%;\r\n    height: 11%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.user-name{\r\n    position: absolute;\r\n    font-size: .9rem;\r\n    top: 22%;\r\n    left: 12.5%;\r\n}\r\n\r\n.comment-date, .comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .3rem;\r\n}\r\n\r\n.comment-date{\r\n    right: 3rem;\r\n}\r\n\r\n.comment-time{\r\n    right: .3rem;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 12.5%;\r\n    margin-bottom: .5rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: .9rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -475,15 +475,32 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var server = __webpack_require__(/*! ./server.js */ 8);
+	var util = __webpack_require__(/*! ./util.js */ 10);
+	var config = __webpack_require__(/*! ./config.js */ 9);
 	
 	var SendComment = new Vue({
 	    el: "#comment-area",
 	    data: getEmptyComment(),
 	    methods:{
 	        send: function() {
-	            var comment = {};
-	            CommentList.copyComment(SendComment, comment);
-	            CommentList.addComment(comment);
+	            if (config.userId === undefined) {
+	                window.android.webToast('请先登录');
+	                return;
+	            }
+	
+	            var today = new Date();
+	
+	            var newComment = {
+	                userId: config.userId,
+	                createdDate: util.getDateString(today),
+	                createdTime: util.getTimeString(today),
+	                content: SendComment.content,
+	            };
+	
+	            server.addComment(CommentList, newComment, function () {
+	                server.getList(CommentList);
+	            });
+	
 	            SendComment.$data = getEmptyComment();
 	        }
 	    }
@@ -492,31 +509,15 @@
 	var CommentList = new Vue({
 	    el: "#comment-list",
 	    data: {
+	        scene: {},
 	        items: []
-	    },
-	    methods:{
-	        reponseClick: function(item) {
-	            console.log("ll");
-	        },
-	        addComment: function(comment) {
-	            server.addComment(comment);
-	            CommentList.items.push(comment);
-	            console.log(CommentList.items);
-	        },
-	        copyComment: function(srcComment, decComment) {
-	            var commentSchema = getEmptyComment();
-	            for(var attr in commentSchema){
-	                if(commentSchema.hasOwnProperty(attr)){
-	                    decComment[attr] = srcComment[attr];
-	                }
-	            }
-	        }
-	    },
+	    }
 	});
-	
 	
 	function getEmptyComment(){
 	    return {
+	        userName: '',
+	        avatar: '',
 	        userId: '',
 	        createdDate: '',
 	        createdTime: '',
@@ -538,6 +539,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var config = __webpack_require__(/*! ./config.js */ 9);
+	var util = __webpack_require__(/*! ./util.js */ 10);
+	var sceneUrl = config.sceneApiUrl + config.sceneId;
 	
 	module.exports = {
 	    'getList': getList,
@@ -545,27 +548,89 @@
 	};
 	
 	function getList(commentList) {
-	    var sceneUrl = config.sceneApiUrl + config.sceneId;
+	    // 查询scene表
+	    $.get(sceneUrl, function(data) {
+	        if (data.commentsIds.length === 0) {
+	            commentList.scene = data;
+	            return;
+	        }
 	
-	    //  查询scene表
-	    $.get(sceneUrl, function (data) {
 	        var commentsIds = data.commentsIds;
-	
+	        commentList.scene = data;
 	        var idInQureyString = '?_id__in=';
 	        var commentUrl = config.commentApiUrl + idInQureyString + commentsIds.toString();
 	        // 查询comment表
-	        $.get(commentUrl, function (data) {
-	            commentList.items = data;
+	        $.get(commentUrl, function(data) {
+	            var commentsData = data;
+	
+	            var usersIds = [];
+	            for (var i = 0; i < commentsData.length; i++) {
+	                usersIds.push(commentsData[i].userId);
+	            }
+	
+	            getUsersData(usersIds, function (usersData) {
+	                for (var i = 0; i < commentsData.length; i++) {
+	                    for (var j = 0; j < usersData.length; j++) {
+	                        if (commentsData[i].userId === usersData[j]._id) {
+	                            commentsData[i].userName = usersData[j].name;
+	                            commentsData[i].avatar = usersData[j].imgUrl;
+	                        }
+	                    }
+	                }
+	
+	                commentsData.sort(mySort());
+	
+	                var comentListLength = commentList.items.length;
+	                for (i = 0; i < comentListLength; i++) {
+	                    commentList.items.pop();
+	                }
+	                for (i = 0; i < commentsData.length; i++) {
+	                    var commentTime = commentsData[i].createdTime.split(':', 2);
+	                    commentsData[i].createdTime = commentTime[0] + ':' + commentTime[1];
+	                    commentList.items.push(commentsData[i]);
+	                }
+	            });
 	        });
 	    });
 	}
 	
 	// 增加一条评论
-	function addComment(newComment) {
-	    $.post(config.commentApiUrl, newComment, function (comment) {
-	        // 将服务器端post 成功产生的_id记录
-	        newComment._id = comment._id;
+	function addComment(commentList, newComment, callback) {
+	    $.post(config.commentApiUrl, newComment, function(comment) {
+	        var newCommentId = comment._id;
+	        newComment._id = newCommentId;
+	        var scene = commentList.scene;
+	        scene.commentsIds.push(newCommentId);
+	        util.restfulPutRequest(config.sceneApiUrl, scene._id, scene, callback);
 	    });
+	}
+	
+	// 根据usersIds查询user信息
+	function getUsersData(usersIds, callback) {
+	    var usersData;
+	
+	    var idInQureyString = '?_id__in=';
+	    var userUrl = config.userApiUrl + idInQureyString + usersIds.toString();
+	    $.get(userUrl, function (data) {
+	        usersData = data;
+	        callback(usersData);
+	    });
+	}
+	
+	function mySort() {
+	    return function(obj1, obj2){
+	        var a, b;
+	        if (typeof obj1 === "object" && typeof obj2 === "object" && obj1 && obj2) {
+	            a = Date.parse(obj1.createdDate + ' ' + obj1.createdTime);
+	            b = Date.parse(obj2.createdDate + ' ' + obj2.createdTime);
+	            if (a === b) {
+	                return 0;
+	            }
+	            if (typeof a === typeof b) {
+	                return a < b ? -1 : 1;
+	            }
+	        }
+	    };
 	}
 
 
@@ -579,13 +644,25 @@
 	var util = __webpack_require__(/*! ./util */ 10);
 	
 	var URLParams = util.getQureyParams(window.location.href);
+	var userApiUrl = 'http://121.40.224.83:8080/JnPlant/api/user/';
+	getUserIdByOpenId(URLParams.openId);
+	
 	module.exports = {
 	    commentApiUrl: 'http://121.40.224.83:8080/JnPlant/api/comment/',
 	    sceneApiUrl: 'http://121.40.224.83:8080/JnPlant/api/scene/',
+	    'userApiUrl': userApiUrl,
 	
 	    sceneId: URLParams.sceneId,
-	    openId: URLParams.openId
+	    openId: URLParams.openId,
 	};
+	
+	
+	function getUserIdByOpenId(openId) {
+	    var qureyUrl = '?openId=';
+	    $.get(userApiUrl + qureyUrl + openId, function (data) {
+	        module.exports.userId = data[0]._id;
+	    });
+	}
 
 
 /***/ },
@@ -610,6 +687,40 @@
 	    }
 	
 	    return searchParams;
+	};
+	
+	exports.restfulPutRequest = function (apiUrl, id, changeInfo, callback) {
+	    $.ajax({
+	        url: apiUrl + id,
+	        type: 'PUT',
+	        dataType: 'json',
+	        contentType: 'application/json',
+	        data: JSON.stringify(changeInfo),
+	        success: function() {
+	            callback();
+	            console.log('put success');
+	        }
+	    });
+	};
+	
+	exports.getDateString = function (date) {
+	    var dateString = '';
+	    var year = date.getFullYear().toString();
+	    var month = (date.getMonth() + 1).toString();
+	    var dateInMonth = date.getDate().toString();
+	
+	    dateString = year + '-' + month + '-' + dateInMonth;
+	    return dateString;
+	};
+	
+	exports.getTimeString = function (date) {
+	    var timeString = '';
+	    var hour = date.getHours().toString();
+	    var minutes = date.getMinutes().toString();
+	    var seconds = date.getSeconds().toString();
+	
+	    timeString = hour + ':' + minutes + ':' + seconds;
+	    return timeString;
 	};
 
 

@@ -1,13 +1,30 @@
 var server = require('./server.js');
+var util = require('./util.js');
+var config = require('./config.js');
 
 var SendComment = new Vue({
     el: "#comment-area",
     data: getEmptyComment(),
     methods:{
         send: function() {
-            var comment = {};
-            CommentList.copyComment(SendComment, comment);
-            CommentList.addComment(comment);
+            if (config.userId === undefined) {
+                window.android.webToast('请先登录');
+                return;
+            }
+
+            var today = new Date();
+
+            var newComment = {
+                userId: config.userId,
+                createdDate: util.getDateString(today),
+                createdTime: util.getTimeString(today),
+                content: SendComment.content,
+            };
+
+            server.addComment(CommentList, newComment, function () {
+                server.getList(CommentList);
+            });
+
             SendComment.$data = getEmptyComment();
         }
     }
@@ -16,31 +33,15 @@ var SendComment = new Vue({
 var CommentList = new Vue({
     el: "#comment-list",
     data: {
+        scene: {},
         items: []
-    },
-    methods:{
-        reponseClick: function(item) {
-            console.log("ll");
-        },
-        addComment: function(comment) {
-            server.addComment(comment);
-            CommentList.items.push(comment);
-            console.log(CommentList.items);
-        },
-        copyComment: function(srcComment, decComment) {
-            var commentSchema = getEmptyComment();
-            for(var attr in commentSchema){
-                if(commentSchema.hasOwnProperty(attr)){
-                    decComment[attr] = srcComment[attr];
-                }
-            }
-        }
-    },
+    }
 });
-
 
 function getEmptyComment(){
     return {
+        userName: '',
+        avatar: '',
         userId: '',
         createdDate: '',
         createdTime: '',
