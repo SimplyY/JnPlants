@@ -462,7 +462,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.main-container{\r\n    width: 98%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n#comment-list{\r\n    margin-top: .4rem;\r\n    border-bottom: 1px solid #4ace63;\r\n}\r\n\r\n.commentator-info{\r\n    position: relative;\r\n}\r\n\r\n.avatar{\r\n    width: 11%;\r\n    height: 11%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.user-name{\r\n    position: absolute;\r\n    font-size: .9rem;\r\n    top: 22%;\r\n    left: 12.5%;\r\n}\r\n\r\n.comment-date, .comment-time{\r\n    font-size: .9rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .3rem;\r\n}\r\n\r\n.comment-date{\r\n    right: 3rem;\r\n}\r\n\r\n.comment-time{\r\n    right: .3rem;\r\n}\r\n\r\n.comment-words{\r\n    margin-left: 12.5%;\r\n    margin-bottom: .5rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: .9rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
+	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.main-container{\r\n    width: 97%;\r\n    height: 100%;\r\n    margin: .5rem auto 3.5rem auto;\r\n}\r\n\r\n#comment-list{\r\n    margin-top: .3rem;\r\n    border-bottom: 1px solid #eee;\r\n}\r\n\r\n.commentator-info{\r\n    position: relative;\r\n}\r\n\r\n.avatar{\r\n    width: 11%;\r\n    height: 11%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.user-name{\r\n    position: absolute;\r\n    font-size: .8rem;\r\n    top: 21%;\r\n    left: 12.5%;\r\n}\r\n\r\n.comment-date{\r\n    font-size: .75rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .3rem;\r\n}\r\n\r\n.comment-date{\r\n    right: .3rem;\r\n}\r\n\r\n.comment-words{\r\n    font-size: .9rem;\r\n    line-height: 1.2rem;\r\n    margin-left: 12.5%;\r\n    margin-bottom: .3rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: .9rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -585,8 +585,6 @@
 	                    commentList.items.pop();
 	                }
 	                for (i = 0; i < commentsData.length; i++) {
-	                    var commentTime = commentsData[i].createdTime.split(':', 2);
-	                    commentsData[i].createdTime = commentTime[0] + ':' + commentTime[1];
 	                    commentList.items.push(commentsData[i]);
 	                }
 	            });

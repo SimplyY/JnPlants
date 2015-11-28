@@ -3,13 +3,14 @@ body{
 }
 
 .main-container{
-    width: 98%;
-    margin: .5rem auto;
+    width: 97%;
+    height: 100%;
+    margin: .5rem auto 3.5rem auto;
 }
 
 #comment-list{
-    margin-top: .4rem;
-    border-bottom: 1px solid #4ace63;
+    margin-top: .3rem;
+    border-bottom: 1px solid #eee;
 }
 
 .commentator-info{
@@ -24,29 +25,27 @@ body{
 
 .user-name{
     position: absolute;
-    font-size: .9rem;
-    top: 22%;
+    font-size: .8rem;
+    top: 21%;
     left: 12.5%;
 }
 
-.comment-date, .comment-time{
-    font-size: .9rem;
+.comment-date{
+    font-size: .75rem;
     color: #a5a5a5;
     position: absolute;
     top: .3rem;
 }
 
 .comment-date{
-    right: 3rem;
-}
-
-.comment-time{
     right: .3rem;
 }
 
 .comment-words{
+    font-size: .9rem;
+    line-height: 1.2rem;
     margin-left: 12.5%;
-    margin-bottom: .5rem;
+    margin-bottom: .3rem;
 }
 
 footer{

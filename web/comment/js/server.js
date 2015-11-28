@@ -45,8 +45,6 @@ function getList(commentList) {
                     commentList.items.pop();
                 }
                 for (i = 0; i < commentsData.length; i++) {
-                    var commentTime = commentsData[i].createdTime.split(':', 2);
-                    commentsData[i].createdTime = commentTime[0] + ':' + commentTime[1];
                     commentList.items.push(commentsData[i]);
                 }
             });
