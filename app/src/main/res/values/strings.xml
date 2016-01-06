@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">JnPlants</string>
+
+    <string name="NULL"></string>
+
+
+    <!--drawer-->
+    <string name="drawer_name">植物图鉴</string>
+    <string name="drawer_description">在这里寻找江大校园一草一木~</string>
+    <string name="drawer_item_beautiful_scene">美景推荐</string>
+    <string name="drawer_item_search">查找植物</string>
+
+
+</resources>
