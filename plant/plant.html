@@ -81,6 +81,17 @@
                     <label for="">别名：</label>
                     <input type="text" name="nickName" v-model="nickName" id="nickName" oninput="this.inputNickName.update()">
                 </div>
+
+                <div class="write">
+                    <label for="">经度：</label>
+                    <input type="text" name="longitude" v-model="longitude" id="longitude">
+                </div>
+
+                <div class="write">
+                    <label for="">纬度：</label>
+                    <input type="text" name="latitude" v-model="latitude" id="latitude">
+                </div>
+                
                 <div id="upload-image">
                     <input type="button" id="upload-top-img" name="btn" value="上传置顶图片">
                     <input type="button" id="upload-article-img" class="pictures" name="btn" value="上传正文图片">
