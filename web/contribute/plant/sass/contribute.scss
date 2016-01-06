@@ -216,7 +216,9 @@ nav {
                 font-size: 1.1rem;
                 text-align: center;
             }
-            input[name="nickName"] {
+            input[name="nickName"],
+            input[name="longitude"],
+            input[name="latitude"] {
                 width: 65%;
             }
         }
@@ -225,6 +227,7 @@ nav {
             top: 0;
             right: 0;
             input[name="btn"] {
+                display: block;
                 outline: 0;
                 border: 0;
                 background-color: $themeColor;

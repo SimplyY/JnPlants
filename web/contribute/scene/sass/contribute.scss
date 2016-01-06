@@ -216,9 +216,12 @@ nav {
                 font-size: 1.1rem;
                 text-align: center;
             }
-            input[name="location"] {
+            input[name="location"],
+            input[name="longitude"],
+            input[name="latitude"]{
                 width: 67.75%;
             }
+
         }
         #upload-image {
             position: absolute;

@@ -187,7 +187,9 @@ nav {
         outline: none;
         font-size: 1.1rem;
         text-align: center; }
-      .content .contribute-content .write input[name="location"] {
+      .content .contribute-content .write input[name="location"],
+      .content .contribute-content .write input[name="longitude"],
+      .content .contribute-content .write input[name="latitude"] {
         width: 67.75%; }
     .content .contribute-content #upload-image {
       position: absolute;

@@ -36,6 +36,8 @@
             authorId: 123,
             authorName: 'test',
             location: '',
+            longitude: '',
+            latitude: '',
             month: today.getMonth() + 1,
             season: getSeasonByMonth(this.month),
             imgUrl: '',

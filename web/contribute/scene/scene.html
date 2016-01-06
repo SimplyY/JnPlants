@@ -87,10 +87,21 @@
                 </div>
 
                 <div class="write">
+                    <label for="">经度：</label>
+                    <input type="text" name="longitude" v-model="longitude" id="longitude">
+                </div>
+
+                <div class="write">
+                    <label for="">纬度：</label>
+                    <input type="text" name="latitude" v-model="latitude" id="latitude">
+                </div>
+
+                <div class="write">
                     <label for="">月份：</label>
                     <input type="number" name="month" v-model="month" id="month" oninput="this.inputMonth.update()">
                     <span>月</span>
                 </div>
+
                 <div id="upload-image">
                     <input type="button" id="upload-top-img" name="btn" value="上传置顶图片">
                     <input type="button" id="upload-article-img" class="pictures" name="btn" value="上传正文图片">
