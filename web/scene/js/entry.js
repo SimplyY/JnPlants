@@ -6,7 +6,7 @@ require('../css/iconfont.css');
 
 // load js
 var controller = require('./controller');
-var models = require('./models.js');
+var models = require('./models');
 
 var sceneModel = models.sceneModel;
 var userModel = models.userModel;
