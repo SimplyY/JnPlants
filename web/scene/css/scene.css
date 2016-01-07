@@ -13,7 +13,7 @@
 }
 .map{
     position: fixed;
-    bottom: 3rem;
+    bottom: 3.5rem;
     right: 0;
     color: #000;
 }
@@ -29,9 +29,10 @@
     height: 1.5rem;
     line-height: 1.5rem;
     position: absolute;
-    right: 2rem;
-    bottom: .5rem;
-    border-radius: .3rem;
+    right: 2.5rem;
+    bottom: .6rem;
+    border-radius: .2rem;
+    opacity: .8;
 }
 footer {
     background-color: #4aca63;
