@@ -22,8 +22,7 @@
     padding: .5rem;
 }
 .map-notice{
-    display: inline-block;
-    background-color: #eee;
+    background-color: #4aca63;
     text-align: center;
     width: 3rem;
     height: 1.5rem;
@@ -32,7 +31,6 @@
     right: 2.5rem;
     bottom: .6rem;
     border-radius: .2rem;
-    opacity: .8;
 }
 footer {
     background-color: #4aca63;
