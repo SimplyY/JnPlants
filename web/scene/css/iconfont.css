@@ -21,15 +21,19 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-heart:before {
-	font-size: 1.4rem;
-	content: "\e900";
+.icon-location:before {
+	font-size: 1.6rem;
+    content: "\e900";
 }
 .icon-heart-o:before {
 	font-size: 1.3rem;
-	content: "\e901";
+	content: "\e902";
+}
+.icon-heart:before {
+	font-size: 1.4rem;
+	content: "\e903";
 }
 .icon-bubble:before {
 	font-size: 1.3rem;
-	content: "\e902";
+	content: "\e904";
 }
