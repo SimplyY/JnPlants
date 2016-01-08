@@ -36,6 +36,7 @@ function setController() {
     controller.paddingSceneInfo(sceneModel.data);
     controller.setClickLoveEvent(sceneModel.data, userModel.data, setLoveInServer);
     controller.setClickCommentEvent();
+    controller.setClickMapEvent();
 }
 
 //  对服务器的 scene 表和 user 表的 love 数据进行操作
