@@ -89,6 +89,6 @@ function setClickMapEvent() {
         if (!window.android) {
             return;
         }
-        window.andriod.enterMap();
+        window.android.enterMap();
     });
 }
