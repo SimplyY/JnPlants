@@ -63,7 +63,7 @@
                 <div class="admitted-list" v-repeat="item in items|filterBy 'false' in 'hasChecked'"  v-on="click: changeScene(item)">
                     <h4>{{item.title}}</h4>
                     <span class="by">by:</span>
-                    <p>{{item.author}}</p>
+                    <p>{{item.authorName}}</p>
                     <p class="yue">{{item.month}}</p>
                     <span>月</span>
                     <p class="season">{{item.season}}</p>
@@ -74,7 +74,7 @@
                 <div class="unadmitted-list" v-repeat="item in items|filterBy 'true' in 'hasChecked'" v-on="click:changeScene(item)">
                     <h4>{{item.title}}</h4>
                     <span class="by">by:</span>
-                    <p>{{item.author}}</p>
+                    <p>{{item.authorName}}</p>
                     <p class="yue">{{item.month}}</p>
                     <span>月</span>
                     <p class="season">{{item.season}}</p>

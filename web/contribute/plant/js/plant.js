@@ -10,8 +10,8 @@
     });
 
     // 上传图片
-    uploadImg('upload-top-img', 'upload-image', setPlantTopImg, 0.1, 500);
-    uploadImg('upload-article-img', 'upload-image', insertImgInArticle, 0.08, 400);
+    uploadImg('upload-top-img', 'upload-image', setPlantTopImg, 0.2, 500);
+    uploadImg('upload-article-img', 'upload-image', insertImgInArticle, 0.2, 400);
 
     function insertImgInArticle(IMG_URL) {
         // ![](/images/2015/10/a)
@@ -33,6 +33,8 @@
         return {
             name: '',
             nickName: '',
+            longitude: '',
+            latitude: '',
             article: '',
             authorId: 123,
             authorName: 'test',

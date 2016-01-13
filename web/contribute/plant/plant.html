@@ -62,8 +62,9 @@
                 <p class="approve">未通过<span class="add">+</span></p>
                 <div class="admitted-list" v-repeat="item in items|filterBy 'false' in 'hasChecked'"  v-on="click: changePlant(item)">
                     <h4>{{item.name}}</h4>
-                    <span class="by">by:</span>
-                    <p>{{item.author}}</p>
+                    <span>by:</span>
+                    <p>{{item.authorName}}</p>
+                    <span class="bieming">别名:</span>
                     <p class="nickName">{{item.nickName}}</p>
                     <img class="delete" v-on="click: deletePlantInList(item)" src="http://7xnhck.com1.z0.glb.clouddn.com/15-10-20/25544330.jpg" alt="删除" />
                 </div>
@@ -72,7 +73,8 @@
                 <div class="unadmitted-list" v-repeat="item in items|filterBy 'true' in 'hasChecked'" v-on="click:changePlant(item)">
                     <h4>{{item.name}}</h4>
                     <span class="by">by:</span>
-                    <p>{{item.author}}</p>
+                    <p>{{item.authorName}}</p>
+                    <span class="bieming">别名:</span>
                     <p class="nickName">{{item.nickName}}</p>
                 </div>
             </div>
@@ -91,7 +93,7 @@
                     <label for="">纬度：</label>
                     <input type="text" name="latitude" v-model="latitude" id="latitude">
                 </div>
-                
+
                 <div id="upload-image">
                     <input type="button" id="upload-top-img" name="btn" value="上传置顶图片">
                     <input type="button" id="upload-article-img" class="pictures" name="btn" value="上传正文图片">

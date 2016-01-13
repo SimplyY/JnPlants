@@ -159,9 +159,9 @@ nav {
             position: relative;
             border-radius: 2px;
             margin-bottom: 1rem;
-            padding: 2px 0;
+            padding: 2px 3px 2px 10px;
             h4 {
-                padding: 0 0 2px 10px;
+                padding: 0 0 2px 0;
                 color: #666;
             }
             p {
@@ -171,20 +171,11 @@ nav {
             span {
                 font-size: 13px;
             }
-            .by {
-                margin-left: 0.8rem;
-            }
-            .yue {
+            .bieming {
                 margin-left: 1.5rem;
             }
-            .season {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                font-size: 0.8rem;
-                font-weight: 800;
-                padding: 2px;
-                color: #666;
+            .nickName{
+                display: inline;
             }
             .delete {
                 position: absolute;
