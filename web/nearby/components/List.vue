@@ -1,16 +1,18 @@
 <template>
-    <div id="app">
-        <list>
-        </list>
+    <div id="">
+        <item>
+        </item>
+
+
     </div>
 </template>
 
 <script>
-import List from './List.vue'
+import Item from './Item.vue'
 
 export default {
     components: {
-        List
+        Item
     }
 }
 
