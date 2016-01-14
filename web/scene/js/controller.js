@@ -4,7 +4,8 @@ module.exports = {
     'back':back,
     'paddingSceneInfo': paddingSceneInfo,
     'setClickLoveEvent': setClickLoveEvent,
-    'setClickCommentEvent': setClickCommentEvent
+    'setClickCommentEvent': setClickCommentEvent,
+    'setClickMapEvent': setClickMapEvent
 };
 
 function back() {
@@ -80,5 +81,14 @@ function setClickCommentEvent() {
             return;
         }
         window.android.enterComment();
+    });
+}
+
+function setClickMapEvent() {
+    $('#map').tap(function () {
+        if (!window.android) {
+            return;
+        }
+        window.android.enterMap();
     });
 }
