@@ -22,7 +22,7 @@ $.get("http://121.40.224.83:8090/get-qiniu-uptoken", function(data) {
             drop_element: 'container',
             dragdrop: true,
             max_file_size: '2mb',
-            flash_swf_url: 'https://dn-cdnjscn.qbox.me/ajax/libs/plupload/2.1.5/Moxie.swf',
+            flash_swf_url: 'https://7xkpdt.com1.z0.glb.clouddn.com/ajax/libs/plupload/2.1.5/Moxie.swf',
             get_new_uptoken: false,
             auto_start: true,
             init: {
