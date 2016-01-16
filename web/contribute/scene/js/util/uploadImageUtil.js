@@ -22,7 +22,7 @@ var uploadImg = function (uploadButtonId, buttonContainerId, setUploadImgFun, ma
                 browse_button: uploadButtonId,
                 container: buttonContainerId,
                 max_file_size: maxFileSizeMb.toString() + 'mb',
-                flash_swf_url: 'https://dn-cdnjscn.qbox.me/ajax/libs/plupload/2.1.5/Moxie.swf',
+                flash_swf_url: 'http://7xkpdt.com1.z0.glb.clouddn.com/ajax/libs/plupload/2.1.5/Moxie.swf',
                 get_new_uptoken: false,
                 auto_start: true,
                 init: {

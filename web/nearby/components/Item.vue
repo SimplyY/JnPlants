@@ -1,6 +1,6 @@
 <template>
     <div class="item">
-        <img v-bind:src="item.plant" alt="" />
+        <img v-bind:src="item.imgUrl" alt="" />
         <div class="description">
             <h4 class="title">
                 {{item.title}}
@@ -27,7 +27,7 @@ export default {
         width: 47%;
         display: inline-block;
         vertical-align: top;
-        margin: 0.4rem 1%;
+        margin: 0.5rem 1%;
         background-color: #fff;
         border-radius: 1.5%;
     }
