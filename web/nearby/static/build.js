@@ -50,7 +50,7 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _vueAsyncData = __webpack_require__(77);
+	var _vueAsyncData = __webpack_require__(54);
 	
 	var _vueAsyncData2 = _interopRequireDefault(_vueAsyncData);
 	
@@ -72,7 +72,7 @@
 
 	var __vue_script__, __vue_template__
 	__vue_script__ = __webpack_require__(2)
-	__vue_template__ = __webpack_require__(76)
+	__vue_template__ = __webpack_require__(53)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -80,7 +80,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\JnPlants\\web\\nearby\\components\\App.vue"
+	  var id = "/Users/yuwei/GitHub/JnPlants/web/nearby/components/App.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -128,7 +128,7 @@
 	var __vue_script__, __vue_template__
 	__webpack_require__(4)
 	__vue_script__ = __webpack_require__(8)
-	__vue_template__ = __webpack_require__(75)
+	__vue_template__ = __webpack_require__(52)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -136,7 +136,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\JnPlants\\web\\nearby\\components\\List.vue"
+	  var id = "/Users/yuwei/GitHub/JnPlants/web/nearby/components/List.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -160,8 +160,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-784c0045&file=List.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./List.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-784c0045&file=List.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./List.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-587bee61&file=List.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./List.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-587bee61&file=List.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./List.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -179,7 +179,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n    .list{\r\n        width: 100%;\r\n        margin: 0 1%;\r\n    }\r\n", "", {"version":3,"sources":["/./components/List.vue.style"],"names":[],"mappings":";IA2DA;QACA,YAAA;QACA,aAAA;KACA","file":"List.vue","sourcesContent":["<template>\r\n    <div class=\"list\">\r\n        <item v-for=\"item in items\"\r\n        :item=\"item\">\r\n        </item>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue'\r\n\r\nconst apiUrl = 'http://121.40.224.83:8080/JnPlant/api';\r\nconst sceneUrl = apiUrl + '/scene';\r\nconst plantUrl = apiUrl + '/plant';\r\n\r\nexport default {\r\n    components: {\r\n        Item\r\n    },\r\n\r\n    data() {\r\n        return {\r\n            items:[]\r\n        }\r\n    },\r\n\r\n    asyncData: function(resolve, reject){\r\n        let listData = [];\r\n        let count = {\r\n            plant: false,\r\n            scene: false,\r\n            isCounted: function(){\r\n                return count.plant && count.scene;\r\n            }\r\n        };\r\n\r\n        $.get(plantUrl, function (data) {\r\n            count.plant = true;\r\n\r\n            listData = [...listData, ...data];\r\n            if(count.isCounted()){\r\n                resolve({items: listData});\r\n            }\r\n        });\r\n\r\n        $.get(sceneUrl, function (data) {\r\n            count.scene = true;\r\n\r\n            listData = [...listData, ...data];\r\n            if(count.isCounted()){\r\n                resolve({items: listData});\r\n            }\r\n        });\r\n\r\n    }\r\n}\r\n</script>\r\n<style media=\"screen\">\r\n    .list{\r\n        width: 100%;\r\n        margin: 0 1%;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n    .list{\n        width: 100%;\n        margin: 0 1%;\n    }\n", "", {"version":3,"sources":["/./components/List.vue.style"],"names":[],"mappings":";IAuEA;QACA,YAAA;QACA,aAAA;KACA","file":"List.vue","sourcesContent":["<template>\n    <div class=\"list\">\n        <item v-for=\"item in items\"\n        :item=\"item\">\n        </item>\n    </div>\n\n</template>\n\n<script>\nimport Item from './Item.vue'\n\nconst apiUrl = 'http://121.40.224.83:8080/JnPlant/api';\nconst sceneUrl = apiUrl + '/scene/';\nconst plantUrl = apiUrl + '/plant/';\n\nexport default {\n    components: {\n        Item\n    },\n\n    data() {\n        return {\n            items:[]\n        }\n    },\n\n    asyncData: function(resolve, reject){\n        let listData = [];\n        let count = {\n            plant: false,\n            scene: false,\n            isCounted: function(){\n                return count.plant && count.scene;\n            }\n        };\n\n        $.get(plantUrl, function (data) {\n            count.plant = true;\n            if(typeof data === \"string\"){\n                data = JSON.parse(data);\n            }\n            data.forEach(function(plant){\n                plant.title = plant.name;\n                plant.imgUrl = plant.imgUrl.replace(\"400x\", \"200x\");\n            })\n\n            listData = [...listData, ...data];\n            if(count.isCounted()){\n                resolve({items: listData});\n            }\n        });\n\n        $.get(sceneUrl, function (data) {\n            count.scene = true;\n            if(typeof data === \"string\"){\n                data = JSON.parse(data);\n            }\n            data.forEach(function(scene){\n                scene.imgUrl = scene.imgUrl.replace(\"400x\", \"200x\");\n            })\n            listData = [...listData, ...data];\n            if(count.isCounted()){\n                resolve({items: listData});\n            }\n        });\n    }\n}\n\n</script>\n<style media=\"screen\">\n    .list{\n        width: 100%;\n        margin: 0 1%;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -525,8 +525,8 @@
 	//
 	// <script>
 	
-	var sceneUrl = apiUrl + '/scene';
-	var plantUrl = apiUrl + '/plant';
+	var sceneUrl = apiUrl + '/scene/';
+	var plantUrl = apiUrl + '/plant/';
 	
 	exports.default = {
 	    components: {
@@ -551,6 +551,13 @@
 	
 	        $.get(plantUrl, function (data) {
 	            count.plant = true;
+	            if (typeof data === "string") {
+	                data = JSON.parse(data);
+	            }
+	            data.forEach(function (plant) {
+	                plant.title = plant.name;
+	                plant.imgUrl = plant.imgUrl.replace("400x", "200x");
+	            });
 	
 	            listData = [].concat((0, _toConsumableArray3.default)(listData), (0, _toConsumableArray3.default)(data));
 	            if (count.isCounted()) {
@@ -560,7 +567,12 @@
 	
 	        $.get(sceneUrl, function (data) {
 	            count.scene = true;
-	
+	            if (typeof data === "string") {
+	                data = JSON.parse(data);
+	            }
+	            data.forEach(function (scene) {
+	                scene.imgUrl = scene.imgUrl.replace("400x", "200x");
+	            });
 	            listData = [].concat((0, _toConsumableArray3.default)(listData), (0, _toConsumableArray3.default)(data));
 	            if (count.isCounted()) {
 	                resolve({ items: listData });
@@ -568,6 +580,7 @@
 	        });
 	    }
 	};
+
 	// </script>
 	// <style media="screen">
 	//     .list{
@@ -1204,7 +1217,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\JnPlants\\web\\nearby\\components\\Item.vue"
+	  var id = "/Users/yuwei/GitHub/JnPlants/web/nearby/components/Item.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1228,8 +1241,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6e46883a&file=Item.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-6e46883a&file=Item.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4e767656&file=Item.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4e767656&file=Item.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1247,7 +1260,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n    .item{\r\n        width: 47%;\r\n        display: inline-block;\r\n        vertical-align: top;\r\n        margin: 0.5rem 1%;\r\n        background-color: #fff;\r\n        border-radius: 1.5%;\r\n    }\r\n    .description{\r\n        padding: 2% 4%;\r\n        position: relative;\r\n    }\r\n    img {\r\n        max-width: 100%;\r\n    }\r\n    p{\r\n        display: inline-block;\r\n        font-size: .8rem;\r\n        color: #898888;\r\n        position: absolute;\r\n        right: .5rem;\r\n        top: .3rem;\r\n    }\r\n", "", {"version":3,"sources":["/./components/Item.vue.style"],"names":[],"mappings":";IAyBA;QACA,WAAA;QACA,sBAAA;QACA,oBAAA;QACA,kBAAA;QACA,uBAAA;QACA,oBAAA;KACA;IACA;QACA,eAAA;QACA,mBAAA;KACA;IACA;QACA,gBAAA;KACA;IACA;QACA,sBAAA;QACA,iBAAA;QACA,eAAA;QACA,mBAAA;QACA,aAAA;QACA,WAAA;KACA","file":"Item.vue","sourcesContent":["<template>\r\n    <div class=\"item\">\r\n        <img v-bind:src=\"item.imgUrl\" alt=\"\" />\r\n        <div class=\"description\">\r\n            <h4 class=\"title\">\r\n                {{item.title}}\r\n            </h4>\r\n            <p>\r\n                {{item.distance}}\r\n            </p>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n    name: 'Item',\r\n\r\n    props: {\r\n        item: Object\r\n    }\r\n}\r\n</script>\r\n\r\n<style media=\"screen\">\r\n    .item{\r\n        width: 47%;\r\n        display: inline-block;\r\n        vertical-align: top;\r\n        margin: 0.5rem 1%;\r\n        background-color: #fff;\r\n        border-radius: 1.5%;\r\n    }\r\n    .description{\r\n        padding: 2% 4%;\r\n        position: relative;\r\n    }\r\n    img {\r\n        max-width: 100%;\r\n    }\r\n    p{\r\n        display: inline-block;\r\n        font-size: .8rem;\r\n        color: #898888;\r\n        position: absolute;\r\n        right: .5rem;\r\n        top: .3rem;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n    .item{\n        width: 47%;\n        display: inline-block;\n        vertical-align: top;\n        margin: 0.5rem 1%;\n        background-color: #fff;\n        border-radius: 1.5%;\n    }\n    .description{\n        padding: 2% 4%;\n        position: relative;\n    }\n    img {\n        max-width: 100%;\n    }\n    p{\n        display: inline-block;\n        font-size: .8rem;\n        color: #898888;\n        position: absolute;\n        right: .5rem;\n        top: .3rem;\n    }\n", "", {"version":3,"sources":["/./components/Item.vue.style"],"names":[],"mappings":";IAyBA;QACA,WAAA;QACA,sBAAA;QACA,oBAAA;QACA,kBAAA;QACA,uBAAA;QACA,oBAAA;KACA;IACA;QACA,eAAA;QACA,mBAAA;KACA;IACA;QACA,gBAAA;KACA;IACA;QACA,sBAAA;QACA,iBAAA;QACA,eAAA;QACA,mBAAA;QACA,aAAA;QACA,WAAA;KACA","file":"Item.vue","sourcesContent":["<template>\n    <div class=\"item\">\n        <img v-bind:src=\"item.imgUrl\" alt=\"\" />\n        <div class=\"description\">\n            <h4 class=\"title\">\n                {{item.title}}\n            </h4>\n            <p>\n                {{item.distance}}\n            </p>\n        </div>\n    </div>\n</template>\n\n<script>\nexport default {\n    name: 'Item',\n\n    props: {\n        item: Object\n    }\n}\n</script>\n\n<style media=\"screen\">\n    .item{\n        width: 47%;\n        display: inline-block;\n        vertical-align: top;\n        margin: 0.5rem 1%;\n        background-color: #fff;\n        border-radius: 1.5%;\n    }\n    .description{\n        padding: 2% 4%;\n        position: relative;\n    }\n    img {\n        max-width: 100%;\n    }\n    p{\n        display: inline-block;\n        font-size: .8rem;\n        color: #898888;\n        position: absolute;\n        right: .5rem;\n        top: .3rem;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -1317,45 +1330,22 @@
 /* 51 */
 /***/ function(module, exports) {
 
-	module.exports = "\r\n    <div class=\"item\">\r\n        <img v-bind:src=\"item.imgUrl\" alt=\"\" />\r\n        <div class=\"description\">\r\n            <h4 class=\"title\">\r\n                {{item.title}}\r\n            </h4>\r\n            <p>\r\n                {{item.distance}}\r\n            </p>\r\n        </div>\r\n    </div>\r\n";
+	module.exports = "\n    <div class=\"item\">\n        <img v-bind:src=\"item.imgUrl\" alt=\"\" />\n        <div class=\"description\">\n            <h4 class=\"title\">\n                {{item.title}}\n            </h4>\n            <p>\n                {{item.distance}}\n            </p>\n        </div>\n    </div>\n";
 
 /***/ },
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */
+/* 52 */
 /***/ function(module, exports) {
 
-	module.exports = "\r\n    <div class=\"list\">\r\n        <item v-for=\"item in items\"\r\n        :item=\"item\">\r\n        </item>\r\n    </div>\r\n\r\n";
+	module.exports = "\n    <div class=\"list\">\n        <item v-for=\"item in items\"\n        :item=\"item\">\n        </item>\n    </div>\n\n";
 
 /***/ },
-/* 76 */
+/* 53 */
 /***/ function(module, exports) {
 
-	module.exports = "\r\n    <div id=\"app\">\r\n        <list>\r\n        </list>\r\n    </div>\r\n";
+	module.exports = "\n    <div id=\"app\">\n        <list>\n        </list>\n    </div>\n";
 
 /***/ },
-/* 77 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function () {
