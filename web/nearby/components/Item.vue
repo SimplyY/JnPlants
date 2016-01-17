@@ -6,7 +6,7 @@
                 {{item.title}}
             </h4>
             <p>
-                {{item.distance}}
+                 {{item.distance}} 米
             </p>
         </div>
     </div>
