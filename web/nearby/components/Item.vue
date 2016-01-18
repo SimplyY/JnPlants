@@ -1,12 +1,12 @@
 <template>
-    <div class="item">
+    <div class="item" v-on:click="enterNewActivity">
         <img v-bind:src="item.imgUrl" alt="" />
         <div class="description">
             <h4 class="title">
                 {{item.title}}
             </h4>
             <p>
-                 {{item.distance}} 米
+                 {{item.distance}}米
             </p>
         </div>
     </div>
@@ -18,21 +18,36 @@ export default {
 
     props: {
         item: Object
+    },
+
+    methods: {
+        enterNewActivity: function () {
+            let item = this.$data.item;
+            if (item.name !== undefined) {
+                // item is plant
+                android.webToast('plant');
+                android.enterPlant(item._id);
+            } else {
+                android.webToast('scene');
+                android.enterScene(item._id)
+            }
+        }
     }
 }
 </script>
 
 <style media="screen">
     .item{
-        width: 47%;
+        width: 48%;
         display: inline-block;
         vertical-align: top;
-        margin: 0.5rem 1%;
+        margin: 0.4rem 1%;
         background-color: #fff;
         border-radius: 1.5%;
+        font-size: 0.9rem;
     }
     .description{
-        padding: 2% 4%;
+        padding: 1% 4%;
         position: relative;
     }
     img {
@@ -43,7 +58,7 @@ export default {
         font-size: .8rem;
         color: #898888;
         position: absolute;
-        right: .5rem;
-        top: .3rem;
+        right: .2rem;
+        top: .25rem;
     }
 </style>

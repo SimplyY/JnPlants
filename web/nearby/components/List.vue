@@ -15,7 +15,7 @@ import util from '../util'
 const apiUrl = 'http://121.40.224.83:8080/JnPlant/api';
 const sceneUrl = apiUrl + '/scene/';
 const plantUrl = apiUrl + '/plant/';
-const showItemAmount = 14;
+const showItemAmount = 20;
 
 let urlParams = util.getQureyParams(document.URL);
 const defaultLongitude = urlParams.longitude;
@@ -108,21 +108,22 @@ export default {
         });
 
         let cycleTime = 100;
-        setTimeout(function () {
+        setInterval(function () {
+            let hasNewPosition = false;
             if (android === undefined) {
                 return;
             }
 
-            if (android.getCurrentLongitude() !== ""){
+            if (android.getCurrentLongitude() !== "" && hasNewPosition === false){
+                hasNewPosition = true;
+
                 let longitude = android.getCurrentLongitude();
                 let latitude = android.getCurrentLatitude();
-                android.webToast('定位成功,经纬度为：' + longitude + ',' + latitude);
-
-                let list = sortItemList(listData, defaultLongitude, defaultLatitude);
+                let list = sortItemList(listData, longitude, latitude);
                 list = list.slice(0, showItemAmount);
-                resolve({items: list})
-            } else {
-                setTimeout(arguments.callee, cycleTime);
+
+                android.webToast('定位成功,经纬度为：' + longitude + ',' + latitude);
+                resolve({items: list});
             }
         }, cycleTime);
     }
@@ -132,6 +133,5 @@ export default {
 <style media="screen">
     .list{
         width: 100%;
-        margin: 0 1%;
     }
 </style>
