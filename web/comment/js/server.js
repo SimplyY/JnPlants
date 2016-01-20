@@ -1,6 +1,11 @@
 var config = require('./config.js');
 var util = require('./util.js');
-var sceneUrl = config.sceneApiUrl + config.sceneId;
+if (config.sceneId !== undefined) {
+    var sceneUrl = config.sceneApiUrl + config.sceneId;
+} else if (config.plantId !== undefined) {
+    var plantUrl = config.plantApiUrl + config.plantId;
+}
+
 
 module.exports = {
     'getList': getList,
@@ -9,14 +14,29 @@ module.exports = {
 
 function getList(commentList) {
     // 查询scene表
-    $.get(sceneUrl, function(data) {
+    var qureyUrl;
+    if (config.sceneId !== undefined) {
+        qureyUrl = sceneUrl;
+    } else if (config.plantId !== undefined) {
+        qureyUrl = plantUrl;
+    }
+
+    $.get(qureyUrl, function(data) {
         if (data.commentsIds.length === 0) {
-            commentList.scene = data;
+            if (config.sceneId !== undefined) {
+                commentList.scene = data;
+            } else if (config.plantId !== undefined) {
+                commentList.plant = data;
+            }
             return;
+        }
+        if (config.sceneId !== undefined) {
+            commentList.scene = data;
+        } else if (config.plantId !== undefined) {
+            commentList.plant = data;
         }
 
         var commentsIds = data.commentsIds;
-        commentList.scene = data;
         var idInQureyString = '?_id__in=';
         var commentUrl = config.commentApiUrl + idInQureyString + commentsIds.toString();
         // 查询comment表
@@ -57,9 +77,15 @@ function addComment(commentList, newComment, callback) {
     $.post(config.commentApiUrl, newComment, function(comment) {
         var newCommentId = comment._id;
         newComment._id = newCommentId;
-        var scene = commentList.scene;
-        scene.commentsIds.push(newCommentId);
-        util.restfulPutRequest(config.sceneApiUrl, scene._id, scene, callback);
+        if (config.sceneId !== undefined) {
+            var scene = commentList.scene;
+            scene.commentsIds.push(newCommentId);
+            util.restfulPutRequest(config.sceneApiUrl, scene._id, scene, callback);
+        } else if (config.plantId !== undefined) {
+            var plant = commentList.plant;
+            plant.commentsIds.push(newCommentId);
+            util.restfulPutRequest(config.plantApiUrl, plant._id, plant, callback);
+        }
     });
 }
 

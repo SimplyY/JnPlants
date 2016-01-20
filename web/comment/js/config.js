@@ -7,10 +7,12 @@ getUserIdByOpenId(URLParams.openId);
 module.exports = {
     commentApiUrl: 'http://121.40.224.83:8080/JnPlant/api/comment/',
     sceneApiUrl: 'http://121.40.224.83:8080/JnPlant/api/scene/',
-    'userApiUrl': userApiUrl,
+    userApiUrl: userApiUrl,
+    plantApiUrl: 'http://121.40.224.83:8080/JnPlant/api/plant/',
 
     sceneId: URLParams.sceneId,
     openId: URLParams.openId,
+    plantId: URLParams.plantId
 };
 
 

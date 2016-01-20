@@ -100,7 +100,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n    outline: 0;\r\n    font-family: 'Helvetica Neue', Helvetica,\r\n,Lato,sans-serif;\r\n    vertical-align: baselinebaseline;\r\n}\r\nol, ul {\r\n    list-style: none;\r\n}\r\na {\r\n    text-decoration: none;\r\n}\r\nbutton{\r\n    border: 0;\r\n    outline: 0;\r\n}\r\nblockquote, q {\r\n    quotes: none;\r\n}\r\ntable {\r\n    border-collapse: collapse;\r\n    border-spacing: 0;\r\n}\r\n\r\n\r\ninput[type=number] {\r\n    -moz-appearance:textfield;\r\n}\r\ninput[type=number]::-webkit-inner-spin-button,\r\ninput[type=number]::-webkit-outer-spin-button {\r\n    -webkit-appearance: none;\r\n    margin: 0;\r\n}\r\n", ""]);
+	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{\n    margin: 0;\n    padding: 0;\n    border: 0;\n    outline: 0;\n    font-family: 'Helvetica Neue', Helvetica,\n,Lato,sans-serif;\n    vertical-align: baselinebaseline;\n}\nol, ul {\n    list-style: none;\n}\na {\n    text-decoration: none;\n}\nbutton{\n    border: 0;\n    outline: 0;\n}\nblockquote, q {\n    quotes: none;\n}\ntable {\n    border-collapse: collapse;\n    border-spacing: 0;\n}\n\n\ninput[type=number] {\n    -moz-appearance:textfield;\n}\ninput[type=number]::-webkit-inner-spin-button,\ninput[type=number]::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n}\n", ""]);
 	
 	// exports
 
@@ -462,7 +462,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body{\r\n    font-size: 1rem;\r\n}\r\n\r\n.main-container{\r\n    width: 97%;\r\n    height: 100%;\r\n    margin: .5rem auto 3.5rem auto;\r\n}\r\n\r\n#comment-list{\r\n    margin-top: .3rem;\r\n    border-bottom: 1px solid #eee;\r\n}\r\n\r\n.commentator-info{\r\n    position: relative;\r\n}\r\n\r\n.avatar{\r\n    width: 11%;\r\n    height: 11%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.user-name{\r\n    position: absolute;\r\n    font-size: .8rem;\r\n    top: 21%;\r\n    left: 12.5%;\r\n}\r\n\r\n.comment-date{\r\n    font-size: .75rem;\r\n    color: #a5a5a5;\r\n    position: absolute;\r\n    top: .3rem;\r\n}\r\n\r\n.comment-date{\r\n    right: .3rem;\r\n}\r\n\r\n.comment-words{\r\n    font-size: .9rem;\r\n    line-height: 1.2rem;\r\n    margin-left: 12.5%;\r\n    margin-bottom: .3rem;\r\n}\r\n\r\nfooter{\r\n    width: 100%;\r\n    height: 2.8rem;\r\n    position: fixed;\r\n    left: 0;\r\n    bottom: 0;\r\n    background-color: #eee;\r\n}\r\n\r\n#comment-area{\r\n    width: 100%;\r\n    margin: .5rem auto;\r\n}\r\n\r\n.input-comment{\r\n    font-size: 1rem;\r\n    width: 75%;\r\n    height: 1.5rem;\r\n    margin: 0 2% 0 3%;\r\n}\r\n\r\n.input-comment:hover{\r\n    border-color: #4ace63;\r\n}\r\n\r\n.send-comment-btn{\r\n    background-color: #4ace63;\r\n    color: #fff;\r\n    width: 15%;\r\n    height: 1.8rem;\r\n    line-height: 1.5rem;\r\n    font-size: .9rem;\r\n    font-weight: 500;\r\n    border-radius: 3px;\r\n}\r\n", ""]);
+	exports.push([module.id, "body{\n    font-size: 1rem;\n}\n\n.main-container{\n    width: 97%;\n    height: 100%;\n    margin: .5rem auto 3.5rem auto;\n}\n\n#comment-list{\n    margin-top: .3rem;\n    border-bottom: 1px solid #eee;\n}\n\n.commentator-info{\n    position: relative;\n}\n\n.avatar{\n    width: 11%;\n    height: 11%;\n    border-radius: 50%;\n}\n\n.user-name{\n    position: absolute;\n    font-size: .8rem;\n    top: 21%;\n    left: 12.5%;\n}\n\n.comment-date{\n    font-size: .75rem;\n    color: #a5a5a5;\n    position: absolute;\n    top: .3rem;\n}\n\n.comment-date{\n    right: .3rem;\n}\n\n.comment-words{\n    font-size: .9rem;\n    line-height: 1.2rem;\n    margin-left: 12.5%;\n    margin-bottom: .3rem;\n}\n\nfooter{\n    width: 100%;\n    height: 2.8rem;\n    position: fixed;\n    left: 0;\n    bottom: 0;\n    background-color: #eee;\n}\n\n#comment-area{\n    width: 100%;\n    margin: .5rem auto;\n}\n\n.input-comment{\n    font-size: 1rem;\n    width: 75%;\n    height: 1.5rem;\n    margin: 0 2% 0 3%;\n}\n\n.input-comment:hover{\n    border-color: #4ace63;\n}\n\n.send-comment-btn{\n    background-color: #4ace63;\n    color: #fff;\n    width: 15%;\n    height: 1.8rem;\n    line-height: 1.5rem;\n    font-size: .9rem;\n    font-weight: 500;\n    border-radius: 3px;\n}\n", ""]);
 	
 	// exports
 
@@ -510,6 +510,7 @@
 	    el: "#comment-list",
 	    data: {
 	        scene: {},
+	        plant: {},
 	        items: []
 	    }
 	});
@@ -540,7 +541,12 @@
 
 	var config = __webpack_require__(/*! ./config.js */ 9);
 	var util = __webpack_require__(/*! ./util.js */ 10);
-	var sceneUrl = config.sceneApiUrl + config.sceneId;
+	if (config.sceneId !== undefined) {
+	    var sceneUrl = config.sceneApiUrl + config.sceneId;
+	} else if (config.plantId !== undefined) {
+	    var plantUrl = config.plantApiUrl + config.plantId;
+	}
+	
 	
 	module.exports = {
 	    'getList': getList,
@@ -549,14 +555,29 @@
 	
 	function getList(commentList) {
 	    // 查询scene表
-	    $.get(sceneUrl, function(data) {
+	    var qureyUrl;
+	    if (config.sceneId !== undefined) {
+	        qureyUrl = sceneUrl;
+	    } else if (config.plantId !== undefined) {
+	        qureyUrl = plantUrl;
+	    }
+	
+	    $.get(qureyUrl, function(data) {
 	        if (data.commentsIds.length === 0) {
-	            commentList.scene = data;
+	            if (config.sceneId !== undefined) {
+	                commentList.scene = data;
+	            } else if (config.plantId !== undefined) {
+	                commentList.plant = data;
+	            }
 	            return;
+	        }
+	        if (config.sceneId !== undefined) {
+	            commentList.scene = data;
+	        } else if (config.plantId !== undefined) {
+	            commentList.plant = data;
 	        }
 	
 	        var commentsIds = data.commentsIds;
-	        commentList.scene = data;
 	        var idInQureyString = '?_id__in=';
 	        var commentUrl = config.commentApiUrl + idInQureyString + commentsIds.toString();
 	        // 查询comment表
@@ -597,9 +618,15 @@
 	    $.post(config.commentApiUrl, newComment, function(comment) {
 	        var newCommentId = comment._id;
 	        newComment._id = newCommentId;
-	        var scene = commentList.scene;
-	        scene.commentsIds.push(newCommentId);
-	        util.restfulPutRequest(config.sceneApiUrl, scene._id, scene, callback);
+	        if (config.sceneId !== undefined) {
+	            var scene = commentList.scene;
+	            scene.commentsIds.push(newCommentId);
+	            util.restfulPutRequest(config.sceneApiUrl, scene._id, scene, callback);
+	        } else if (config.plantId !== undefined) {
+	            var plant = commentList.plant;
+	            plant.commentsIds.push(newCommentId);
+	            util.restfulPutRequest(config.plantApiUrl, plant._id, plant, callback);
+	        }
 	    });
 	}
 	
@@ -648,10 +675,12 @@
 	module.exports = {
 	    commentApiUrl: 'http://121.40.224.83:8080/JnPlant/api/comment/',
 	    sceneApiUrl: 'http://121.40.224.83:8080/JnPlant/api/scene/',
-	    'userApiUrl': userApiUrl,
+	    userApiUrl: userApiUrl,
+	    plantApiUrl: 'http://121.40.224.83:8080/JnPlant/api/plant/',
 	
 	    sceneId: URLParams.sceneId,
 	    openId: URLParams.openId,
+	    plantId: URLParams.plantId
 	};
 	
 	
@@ -700,6 +729,7 @@
 	        }
 	    });
 	};
+	get()
 	
 	exports.getDateString = function (date) {
 	    var dateString = '';

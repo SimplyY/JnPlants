@@ -34,6 +34,7 @@ var CommentList = new Vue({
     el: "#comment-list",
     data: {
         scene: {},
+        plant: {},
         items: []
     }
 });
