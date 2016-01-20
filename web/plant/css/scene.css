@@ -1,0 +1,64 @@
+#top-img {
+    margin-left: -15%;
+    width: 133%;
+    max-width: 133%;
+}
+.scene-info {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title {
+    text-align: center;
+}
+.map{
+    position: fixed;
+    bottom: 3.5rem;
+    right: 0;
+    color: #000;
+}
+#map-icon{
+    color: #4aca63;
+    padding: .5rem;
+}
+.map-notice{
+    background-color: #4aca63;
+    text-align: center;
+    width: 3rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    position: absolute;
+    right: 2.5rem;
+    bottom: .6rem;
+    border-radius: .2rem;
+}
+footer {
+    background-color: #4aca63;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 2.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer .icons {
+    padding: 0.3rem 0.5rem 0 0.5rem ;
+    position: relative;
+}
+#article{
+    margin-bottom: 2.5rem;
+}
+.icon1, .icon2 {
+    position: absolute;
+}
+.icon1 {
+    left: 3rem;
+}
+.icon2 {
+    right: 3.5rem;
+}
+.love-num, .com-num {
+    font-size: 1.3rem;
+    font-weight: 150;
+}

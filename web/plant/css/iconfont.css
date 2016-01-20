@@ -1,0 +1,39 @@
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.woff?ezlitq') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	top:.11rem;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location:before {
+	font-size: 1.7rem;
+    content: "\e900";
+}
+.icon-heart-o:before {
+	font-size: 1.3rem;
+	content: "\e902";
+}
+.icon-heart:before {
+	font-size: 1.4rem;
+	content: "\e903";
+}
+.icon-bubble:before {
+	font-size: 1.3rem;
+	content: "\e904";
+}

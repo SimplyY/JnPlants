@@ -2,7 +2,7 @@ require('../lib/gmu.js');
 
 module.exports = {
     'back':back,
-    'paddingSceneInfo': paddingSceneInfo,
+    'paddingplantInfo': paddingplantInfo,
     'setClickLoveEvent': setClickLoveEvent,
     'setClickCommentEvent': setClickCommentEvent,
     'setClickMapEvent': setClickMapEvent
@@ -18,27 +18,25 @@ function back() {
     });
 }
 
-function paddingSceneInfo(scene) {
-    $('.top-img').attr('src', scene.imgUrl);
-    $('.title').html(markdown.toHTML('##' + scene.title));
-    $('.location').html(markdown.toHTML('- 美景地点：' + scene.location));
-    $('.month').html(markdown.toHTML('- 美景时间：' + scene.month.toString() + '月'));
-    $('#article').html(markdown.toHTML(scene.article));
+function paddingplantInfo(plant) {
+    $('.top-img').attr('src', plant.imgUrl);
+    $('.title').html(markdown.toHTML('##' + plant.name));
+    $('#article').html(markdown.toHTML(plant.article));
 
-    $('#love-num').text(scene.loversAmount);
-    $('#com-num').text(scene.commentsIds.length);
+    $('#love-num').text(plant.loversAmount);
+    $('#com-num').text(plant.commentsIds.length);
 }
 
-function setClickLoveEvent(scene, user, setLoveInServer) {
+function setClickLoveEvent(plant, user, setLoveInServer) {
     // init click state
     var isClicked = false;
     // judge by server user data
-    if (user && $.inArray(scene._id, user.loveScenesIds) > -1) {
+    if (user && $.inArray(plant._id, user.lovePlantsIds) > -1) {
         isClicked = true;
         setLoveIcon($('#love-icon'), isClicked);
     }
 
-    $('#love-icon').tap(function() {
+    $('#love-icon').on('click', function() {
         //  对未登录时，点击收藏的提示
         if (window.android && !user) {
             window.android.webToast('请先登录');
@@ -54,15 +52,15 @@ function setClickLoveEvent(scene, user, setLoveInServer) {
 
         if (isClicked) {
             setLoveIcon($love, isClicked);
-            scene.loversAmount += 1;
+            plant.loversAmount += 1;
         } else {
             setLoveIcon($love, isClicked);
-            scene.loversAmount -= 1;
+            plant.loversAmount -= 1;
         }
 
-        $('.love-num').text(scene.loversAmount);
+        $('.love-num').text(plant.loversAmount);
 
-        setLoveInServer(scene.loversAmount, isClicked);
+        setLoveInServer(plant.loversAmount, isClicked);
     }
 
     function setLoveIcon($love, isClicked) {
@@ -75,7 +73,7 @@ function setClickLoveEvent(scene, user, setLoveInServer) {
 }
 
 function setClickCommentEvent() {
-    $('#comment-icon').tap(function() {
+    $('#comment-icon').on('click', function() {
         if (!window.android) {
             return;
         }
